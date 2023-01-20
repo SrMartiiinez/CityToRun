@@ -47,6 +47,7 @@ public class Character : MonoBehaviour
     public GameObject invencibilidadIndicador;
     public GameObject magnetIndicador;
     public GameObject jetpackIndicador;
+
     //public GameObject jumpIndicador;
 
     public Slider powerUpDurationSlider;

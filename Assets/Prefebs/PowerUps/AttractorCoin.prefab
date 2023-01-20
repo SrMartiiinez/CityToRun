@@ -124,12 +124,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8335b3b0b4049af4e88d4af7bad77272, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onPickUpCoin:
+  onCoinPickUp:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-        m_MethodName: Play
+      - m_Target: {fileID: 2011006460155868527, guid: 40f7c5d63e348394a9b1b5c70e98f00a, type: 3}
+        m_TargetAssemblyTypeName: AnimParticleCoin, Assembly-CSharp
+        m_MethodName: TriggerCoinAnimation
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
