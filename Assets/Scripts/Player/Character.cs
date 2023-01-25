@@ -25,6 +25,8 @@ public class Character : MonoBehaviour
     public float FwdSpeed = 7f;
     private float ColHeight;
     private float ColCenterY;
+    public float CollCenterYOnRoll;
+    //public float ColHeightOnRoll;
 
     public static int numberOfCoins;
     public static int numberOfTotalCoins;
@@ -41,7 +43,7 @@ public class Character : MonoBehaviour
     public bool MaxJump;
     //public bool Invencibility;
     public bool Boost;
-    public bool gravitybool = true;
+    //public bool gravitybool = true;
     public bool cancelJump;
 
     public GameObject invencibilidadIndicador;
@@ -195,8 +197,8 @@ public class Character : MonoBehaviour
             if (RollCounter <= 0f)
             {
                 RollCounter = 0f;
-                m_char.center = new Vector3(0, ColCenterY, 0);
-                m_char.height = ColHeight;
+                //m_char.center = new Vector3(0, ColCenterY, 0);
+                //m_char.height = ColHeight;
                 InRoll = false;
                 GridViewController.Instance.currentSwipe = GridViewController.DraggedDirection.None;
             }
@@ -204,13 +206,15 @@ public class Character : MonoBehaviour
             {
 
                 RollCounter = 0.20f;
-                m_char.center = new Vector3(0, ColCenterY / 2f, 0);
-                m_char.height = ColHeight / 0.5f;
+                //m_char.center = new Vector3(0, ColCenterY / 2f, 0);
+                m_char.center = new Vector3(0,CollCenterYOnRoll, 0);
+                m_char.height = ColHeight / 2f;
                 if (Boost == false)
                 {
                     y -= 10f;
                 }
                 m_Animator.CrossFadeInFixedTime("Roll", 0.05f);
+                Debug.Log("EmpiezaRoll");
                 InRoll = true;
                 InJump = false;
 
@@ -233,8 +237,9 @@ public class Character : MonoBehaviour
                 {
                     m_Animator.Play("Roll");
                     cancelJump = false;
+                   
                 }
-                else
+                else/* if (!m_Animator.GetCurrentAnimatorStateInfo(0).IsTag("Rolling"))*/
                 {
                     m_Animator.Play("Landing");
                 }
@@ -262,7 +267,7 @@ public class Character : MonoBehaviour
                 y -= JumpPower * 2 * Time.deltaTime;
             }
 
-            if (/*!cancelJump && */m_char.velocity.y < -0.1f)
+            if (/*!cancelJump && */m_char.velocity.y < -0.1f && (!m_Animator.GetCurrentAnimatorStateInfo(0).IsTag("Rolling")))
                 m_Animator.Play("Falling");
             
 
@@ -521,6 +526,10 @@ public class Character : MonoBehaviour
         JumpPower /= multiplier;
         //jumpIndicador.SetActive(false);
     }
-
+    public void AfterRoll()
+    {
+        m_char.center = new Vector3(0, ColCenterY, 0);
+        m_char.height = ColHeight;
+    }
     
 }

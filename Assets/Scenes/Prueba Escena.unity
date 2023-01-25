@@ -4361,7 +4361,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-80172
+  m_Name: pb_Mesh-12850
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -4819,7 +4819,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-80186
+  m_Name: pb_Mesh-12864
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -6241,7 +6241,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!135 &1434818701
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -6332,7 +6332,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61fd9f08e579367418a8441cf3fef144, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  duration: 10
+  duration: 999
 --- !u!1 &1435515839
 GameObject:
   m_ObjectHideFlags: 0
@@ -9128,7 +9128,7 @@ CharacterController:
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: -0.16, z: 0}
 --- !u!95 &2001467590
 Animator:
   serializedVersion: 4
@@ -9174,6 +9174,7 @@ MonoBehaviour:
   InJump: 0
   InRoll: 0
   FwdSpeed: 8
+  CollCenterYOnRoll: -0.56
   coinsText: {fileID: 1974707197}
   coinsTextPause: {fileID: 1589588852}
   coinsTextDeath: {fileID: 231907846}
@@ -9184,7 +9185,6 @@ MonoBehaviour:
   shakeCamera: {fileID: 963194230}
   MaxJump: 0
   Boost: 0
-  gravitybool: 1
   cancelJump: 0
   invencibilidadIndicador: {fileID: 1879905117}
   magnetIndicador: {fileID: 127610998}
