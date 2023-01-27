@@ -4,15 +4,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-[System.Serializable]
+public enum SIDE { Left, Mid, Right } //Carriles del juego.
 
-public enum SIDE { Left, Mid, Right }
+/// <summary>
+/// Maneja el funcionamiento del personaje.
+/// </summary>
+
+[System.Serializable]
 public class Character : MonoBehaviour
 {
     public SIDE m_Side = SIDE.Mid;
     float NewXPos = 0f;
     [HideInInspector]
-    public bool SwipeLeft, SwipeRight, SwipeUp, SwipeDown;
+    public bool SwipeLeft, SwipeRight, SwipeUp, SwipeDown; // Movimiento de los toques de la pantalla.
     public float XValue;
     private CharacterController m_char;
     private Animator m_Animator;
@@ -22,11 +26,14 @@ public class Character : MonoBehaviour
     public float JumpPower = 7f;
     public bool InJump;
     public bool InRoll;
+    float RollCounter;
     public float FwdSpeed = 7f;
-    private float ColHeight;
+
+    // Datos iniciales del collider del CharacterController.
+    private float ColHeight; 
     private float ColCenterY;
     public float CollCenterYOnRoll;
-    //public float ColHeightOnRoll;
+
 
     public static int numberOfCoins;
     public static int numberOfTotalCoins;
@@ -34,27 +41,25 @@ public class Character : MonoBehaviour
     public Text coinsTextPause;
     public Text coinsTextDeath;
 
-    private bool knocked; // Variable that indicates if the character is knocked up or not.
-    public float knockUpTime = 5f; // Time that the character will be knocked up.
-    public float multiplier = 2f;
+    private bool knocked; // Variable que indica si el personaje está noqueado o no.
+    public float knockUpTime = 5f; // Tiempo de noqueo.
+    public float jumpMultiplier = 2f;
     [SerializeField] private bool gameOver;
     public float gameOverCooldown = 2f;
     public ShakeCamera shakeCamera;
     public bool MaxJump;
-    //public bool Invencibility;
-    public bool Boost;
-    //public bool gravitybool = true;
+    public bool Boost; //PowerUp jeypack activado o desactivado.
     public bool cancelJump;
 
     public GameObject invencibilidadIndicador;
     public GameObject magnetIndicador;
     public GameObject jetpackIndicador;
 
-    //public GameObject jumpIndicador;
+
 
     public Slider powerUpDurationSlider;
 
-    ExampleClass instance; 
+    
 
 
 
@@ -70,7 +75,7 @@ public class Character : MonoBehaviour
         numberOfTotalCoins = 0;
         powerUpDurationSlider.gameObject.SetActive(false);
 
-        //jumpIndicador.SetActive(false);
+
         jetpackIndicador.SetActive(false);
         magnetIndicador.SetActive(false);
         invencibilidadIndicador.SetActive(false);
@@ -80,39 +85,25 @@ public class Character : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        ////////SECCION DE DAVID
-        //if (Input.GetButtonDown("Jump") && Boost == false)
-        //{
-        //    StartCoroutine(BoostCorroutine(1f));
-        //}
-       //if(gravitybool == false)
-       // {
-       //     y = 0;
-       // }
 
-
-        ///////////////////////////
         if (gameOver) 
         {
             GridViewController.Instance.currentSwipe = GridViewController.DraggedDirection.None;
-            return; // If the game is over, do nothing.
+            return; // Si el juego está acabado, no hace nada más.
         }
 
         if (Time.timeScale == 1)
         {
+            // Captura - Simula los movimientos de los toques en la pantalla. 
             SwipeLeft = Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow) || GridViewController.Instance.currentSwipe == GridViewController.DraggedDirection.Left;
             SwipeRight = Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow) || GridViewController.Instance.currentSwipe == GridViewController.DraggedDirection.Right;
             SwipeUp = Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow) || GridViewController.Instance.currentSwipe == GridViewController.DraggedDirection.Up;
             SwipeDown = Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow) || GridViewController.Instance.currentSwipe == GridViewController.DraggedDirection.Down;
-            //SwipeLeft = GridViewController.Instance.currentSwipe == GridViewController.DraggedDirection.Left;
-            //SwipeRight = GridViewController.Instance.currentSwipe == GridViewController.DraggedDirection.Right;
-            //SwipeUp = GridViewController.Instance.currentSwipe == GridViewController.DraggedDirection.Up;
-            //SwipeDown = GridViewController.Instance.currentSwipe == GridViewController.DraggedDirection.Down;
         }
 
         if (SwipeLeft && !InRoll)
         {
-            if (m_Side == SIDE.Mid)
+            if (m_Side == SIDE.Mid) //Comprueba si está en el carril central.
             {
                 NewXPos = -XValue;
                 m_Side = SIDE.Left;
@@ -138,7 +129,7 @@ public class Character : MonoBehaviour
                     m_Animator.Play("KnockUpLeft");
                 }
             }
-            GridViewController.Instance.currentSwipe = GridViewController.DraggedDirection.None;
+            GridViewController.Instance.currentSwipe = GridViewController.DraggedDirection.None; //Resetea el estado de los toques de la pantalla.
         }
         else if (SwipeRight && !InRoll)
         {
@@ -171,6 +162,7 @@ public class Character : MonoBehaviour
             GridViewController.Instance.currentSwipe = GridViewController.DraggedDirection.None;
         }
        
+        //Movimiento del perasonaje.
         Vector3 moveVector = new Vector3(x - transform.position.x, y * Time.deltaTime, FwdSpeed * Time.deltaTime);
         x = Mathf.Lerp(x, NewXPos, Time.deltaTime * SpeedDodge);
         m_char.Move(moveVector);
@@ -185,10 +177,6 @@ public class Character : MonoBehaviour
 
     }
 
-
-    internal float RollCounter;
-
-
     public void Roll()
     {
         if (Boost == false)
@@ -197,8 +185,6 @@ public class Character : MonoBehaviour
             if (RollCounter <= 0f)
             {
                 RollCounter = 0f;
-                //m_char.center = new Vector3(0, ColCenterY, 0);
-                //m_char.height = ColHeight;
                 InRoll = false;
                 GridViewController.Instance.currentSwipe = GridViewController.DraggedDirection.None;
             }
@@ -206,15 +192,18 @@ public class Character : MonoBehaviour
             {
 
                 RollCounter = 0.20f;
-                //m_char.center = new Vector3(0, ColCenterY / 2f, 0);
+
+                //Ajustamos la forma del collider.
                 m_char.center = new Vector3(0,CollCenterYOnRoll, 0);
                 m_char.height = ColHeight / 2f;
+
+                //Arregla el problema del jetpack por el cual el roll se quedaba pillado justo cuando cojes el jetpack.
                 if (Boost == false)
                 {
                     y -= 10f;
                 }
-                m_Animator.CrossFadeInFixedTime("Roll", 0.05f);
-                Debug.Log("EmpiezaRoll");
+                m_Animator.CrossFadeInFixedTime("Roll", 0.05f); //Cambia la animacion haciendo una transición.
+                //Debug.Log("EmpiezaRoll");
                 InRoll = true;
                 InJump = false;
 
@@ -239,15 +228,11 @@ public class Character : MonoBehaviour
                     cancelJump = false;
                    
                 }
-                else/* if (!m_Animator.GetCurrentAnimatorStateInfo(0).IsTag("Rolling"))*/
+                else
                 {
                     m_Animator.Play("Landing");
                 }
                 
-               
-                
-           
-
                 InJump = false;
                 
             }
@@ -267,39 +252,39 @@ public class Character : MonoBehaviour
                 y -= JumpPower * 2 * Time.deltaTime;
             }
 
-            if (/*!cancelJump && */m_char.velocity.y < -0.1f && (!m_Animator.GetCurrentAnimatorStateInfo(0).IsTag("Rolling")))
+            if (m_char.velocity.y < -0.1f && (!m_Animator.GetCurrentAnimatorStateInfo(0).IsTag("Rolling")))
                 m_Animator.Play("Falling");
             
 
             if (SwipeDown)
             {
                 cancelJump = true;
-                //m_Animator.Play("Roll");
+
             }
             GridViewController.Instance.currentSwipe = GridViewController.DraggedDirection.None;
         }
     }
 
     private void OnTriggerEnter(Collider other) {
-        // Need the tag "FrontCollider" attached to the object with the trigger.
+        // Se necesita el tag "FrontCollider" atachando el objeto con un trigger. 
         if (!PoweUpManager.instance.Invencibility && !gameOver && other.gameObject.tag == "FrontCollider")
         {
             shakeCamera.Choque();
             StartCoroutine(Death());
-            Debug.Log("Game Over loser.");
+            //Debug.Log("Game Over loser.");
         }
         if (PoweUpManager.instance.Invencibility && other.gameObject.tag == "FrontCollider")
         {
             //TO DO: Aquí intancio el efecto del objeto destrullendose
 
-            Debug.Log("Kaboom");
+            //Debug.Log("Kaboom");
 
-            //Destroy(other.gameObject.transform.parent.gameObject);
+
             other.gameObject.transform.parent.gameObject.SetActive(false);
         }
     }
 
-    // Move the character aside.
+    // Mueve el personaje a un lado.
     public void KnockUp(bool toLeft) 
     {
         if (!PoweUpManager.instance.Invencibility)
@@ -313,7 +298,7 @@ public class Character : MonoBehaviour
                 Debug.Log("Game Over loser.");
             }
 
-            // If the collision is on the right, move the character to the left.
+            // Si el personaje colisiona con el lado derecho del objeto, se desplaza a la izquierda.
             if (toLeft)
             {
                 GridViewController.Instance.currentSwipe = GridViewController.DraggedDirection.Left;
@@ -337,15 +322,15 @@ public class Character : MonoBehaviour
         {
             shakeCamera.Choque();
 
-            if (knocked)
+            if (knocked) //Si ya te habias golpeado...
             {
                 // Game Over.
                 StartCoroutine(Death());
-                Debug.Log("Game Over loser.");
+                //Debug.Log("Game Over loser.");
             }
 
             GridViewController.Instance.currentSwipe = GridViewController.DraggedDirection.None;
-            // If the collision is on the right, move the character to the left.
+            
 
             StartCoroutine(KnockTime());
         }
@@ -353,7 +338,7 @@ public class Character : MonoBehaviour
     }
 
 
-    // Coroutine to wait for the knock up time.
+    // Corutina que gestiona el tiempo en el que se está noqueado.
     IEnumerator KnockTime() 
     {
         knocked = true;
@@ -363,7 +348,7 @@ public class Character : MonoBehaviour
         m_Animator.SetBool("Knocked", false);
     }
     
-    
+    //Gestiona la muerte.
     IEnumerator Death() 
     {
         gameOver = true;
@@ -384,7 +369,7 @@ public class Character : MonoBehaviour
     }
 
 
-
+    
     public void BoostItem(float duration, GameObject[] objectsToDelete)
     {
         if (!Boost)
@@ -392,6 +377,8 @@ public class Character : MonoBehaviour
 
     }
 
+
+    //Gestiona la mecánca del powerup del jetpack.
     IEnumerator BoostCorroutine(float duration, GameObject[] objectsToDelete)
     {
         FwdSpeed = 0;
@@ -400,7 +387,6 @@ public class Character : MonoBehaviour
         y = 10;
         jetpackIndicador.SetActive(true);
         yield return new WaitForSeconds(0.5f);
-        //gravitybool = false;
         y = 0;
         FwdSpeed = 30;
         
@@ -415,20 +401,16 @@ public class Character : MonoBehaviour
             // Actualizamos el slider
             powerUpDurationSlider.value = duration;
             
-            //Debug.Log("Tiempo restante: " + duration);
         }
         powerUpDurationSlider.value = 1;
         powerUpDurationSlider.gameObject.SetActive(false);
-
-        //gravitybool = true;
-        //y = -10;
         FwdSpeed = 7;
         Boost = false;
         InJump = false;
         jetpackIndicador.SetActive(false);
         foreach (GameObject obj in objectsToDelete) {
             Destroy(obj);
-            yield return null; // Espera al siguiente frame para continuar reduciendo la carga
+            yield return null; // Espera al siguiente frame para continuar, reduciendo la carga
         }
     } 
     
@@ -440,6 +422,8 @@ public class Character : MonoBehaviour
 
     }
 
+
+    //Gestiona la mecánca del powerup del Invencibilidad.
     IEnumerator InvencibilidadCo(float duration)
     {
         PoweUpManager.instance.Invencibility = true;
@@ -455,7 +439,6 @@ public class Character : MonoBehaviour
             // Actualizamos el slider
             powerUpDurationSlider.value = duration;
             
-            //Debug.Log("Tiempo restante: " + duration);
         }
         powerUpDurationSlider.value = 1;
         powerUpDurationSlider.gameObject.SetActive(false);
@@ -471,6 +454,8 @@ public class Character : MonoBehaviour
 
     }
 
+
+    //Gestiona la mecánca del powerup del Imán.
     IEnumerator ImmanCo(float duration)
     {
         PoweUpManager.instance.Magnet = true;
@@ -486,7 +471,6 @@ public class Character : MonoBehaviour
             // Actualizamos el slider
             powerUpDurationSlider.value = duration;
 
-            //Debug.Log("Tiempo restante: " + duration);
         }
         powerUpDurationSlider.value = 1;
         powerUpDurationSlider.gameObject.SetActive(false);
@@ -502,10 +486,10 @@ public class Character : MonoBehaviour
 
     }
 
+    //Gestiona la mecánca del powerup del Salto.
     IEnumerator SaltoCo(float duration)
     {
-        //jumpIndicador.SetActive(true);
-        JumpPower *= multiplier;
+        JumpPower *= jumpMultiplier;
         
         powerUpDurationSlider.gameObject.SetActive(true);
         powerUpDurationSlider.maxValue = duration;
@@ -517,15 +501,14 @@ public class Character : MonoBehaviour
             duration -= 0.01f;
             // Actualizamos el slider
             powerUpDurationSlider.value = duration;
-
-            //Debug.Log("Tiempo restante: " + duration);
         }
         powerUpDurationSlider.value = 1;
         powerUpDurationSlider.gameObject.SetActive(false);
         
-        JumpPower /= multiplier;
-        //jumpIndicador.SetActive(false);
+        JumpPower /= jumpMultiplier;
     }
+
+    //Reinicia el collider del character controller a como estaba por defecto. Se llama al final de la animación Rolling.
     public void AfterRoll()
     {
         m_char.center = new Vector3(0, ColCenterY, 0);

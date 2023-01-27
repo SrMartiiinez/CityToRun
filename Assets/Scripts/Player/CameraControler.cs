@@ -2,6 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+/*
+ * Control de la cámara.
+ */
+
 public class CameraControler : MonoBehaviour
 {
     public Transform Target;
@@ -20,7 +25,7 @@ public class CameraControler : MonoBehaviour
     {
         Vector3 followPos = Target.position + Offset;
         RaycastHit hit;
-
+        //Posiciona la altura de la cámara tras sobre pasar el límite de la posición indicada. 
         if (Physics.Raycast(Target.position, Vector3.down, out hit, 2.7f))
             y = Mathf.Lerp(y, hit.point.y, Time.deltaTime * SpeedFollow);
         else y = Mathf.Lerp(y, Target.position.y, Time.deltaTime * SpeedFollow);

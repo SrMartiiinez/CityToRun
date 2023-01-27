@@ -2,24 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+/*
+ * Administra todos los puntos del prefab en los que se instanciarán los powerUps.
+ */
+
 public class PowerUpSpawnPoint : MonoBehaviour {
 
-    private GameObject go;
+
     private PowerUpSpawnManager spawnManager;
     private bool started;
-    public Transform[] tileSpawnPoints;
-
-    private void OnEnable()
-    {
-        if (started)
-        {
-            /*if (spawnManager.canSpawn) {
-                int index = Random.Range(0, spawnManager.spawnPowerUps.Count);
-                go = Instantiate(spawnManager.spawnPowerUps[index], transform);
-                spawnManager.CheckSpawn(index);
-            }*/
-        }
-    }
+    public Transform[] tileSpawnPoints; //Todos los puntos en los que se generarán los poweUps
 
     // Start is called before the first frame update
     void Start()
@@ -30,13 +23,11 @@ public class PowerUpSpawnPoint : MonoBehaviour {
         }
         if (!started)
         {
-            /*int index = Random.Range(0, spawnManager.spawnPowerUps.Count);
-            go = Instantiate(spawnManager.spawnPowerUps[index], transform);
-            spawnManager.CheckSpawn(index);*/
             started = true;
         }
     }
 
+    //Este trigger está colocado un tile por delante del prefab actual. Al llegar a él, se instancia un powerUp en este prefab, el cual está a un tile del jugador.
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))

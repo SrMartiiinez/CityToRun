@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /*
- *  
+ *  Trigger lateral de los obstáculos.
+ *  - Daño al jugador.
+ *  - Desactiva el objeto.
  */
 
 
@@ -28,7 +30,7 @@ public class KnockUpTrigger : MonoBehaviour
 
 
                 // Destroy(transform.parent.gameObject);
-                transform.parent.gameObject.SetActive(false);
+                transform.parent.gameObject.SetActive(false); //Desactivo el padre del objeto que contine el trigger.
             }
             else
             {

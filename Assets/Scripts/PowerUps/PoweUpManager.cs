@@ -2,6 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Administra los powerups.
+/// </summary>
+
 public class PoweUpManager : MonoBehaviour
 {
 

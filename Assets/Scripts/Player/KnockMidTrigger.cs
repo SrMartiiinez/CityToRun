@@ -2,12 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+ *  Trigger frontal de los obstáculos.
+ *  - Daño al jugador.
+ *  - Desactiva el objeto.
+ */
 public class KnockMidTrigger : MonoBehaviour
 {
-    // Se especifica si este script se ejecuta en el lado derecho (true) o el izquierdo (false)
-
-    //public bool soyColliderMedio;
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player")
@@ -22,7 +23,7 @@ public class KnockMidTrigger : MonoBehaviour
 
 
                // Destroy(transform.parent.gameObject);
-                transform.parent.gameObject.SetActive(false);
+                transform.parent.gameObject.SetActive(false); //Desactivo el padre del objeto que contine el trigger.
             }
             else
             {

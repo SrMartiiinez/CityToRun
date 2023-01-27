@@ -3,6 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/*
+ * Administra cosas genrérias del juego.
+ * - Muestra el texto de la distancias que has recorrido tanto en el pausa, gameover y inicio de la partida.
+ */
+
 public class GameManager : MonoBehaviour
 {
     private GameObject player;

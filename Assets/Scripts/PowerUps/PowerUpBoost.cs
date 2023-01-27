@@ -2,18 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+ * Activa el powerUp del JetPack.
+ */
 public class PowerUpBoost : MonoBehaviour
 {
-    //public GameObject pickupEffect;
 
-    //public float multiplier = 1.4f;
     public float duration = 5f;
     public Transform coinsSpawn;
-    public GameObject[] coinsPrefabs;
+    public GameObject[] coinsPrefabs; //Las monedas que aparecerán en la zona de arriba tras cojer el item
 
-    //private void OnEnable() {
-    //    coinsSpawn.transform.parent = null; // detach from parent
-    //}
 
     private void OnTriggerEnter(Collider other)
     {
@@ -24,10 +22,10 @@ public class PowerUpBoost : MonoBehaviour
             GameObject coinsPack = Instantiate(coinsPrefabs[Random.Range(0, coinsPrefabs.Length - 1)], 
                 new Vector3(0, coinsSpawn.position.y, coinsSpawn.position.z), Quaternion.identity);
             
-            player.BoostItem(duration, new GameObject[] { /*coinsSpawn.gameObject,*/ coinsPack});
+            player.BoostItem(duration, new GameObject[] {coinsPack});
             player.InRoll = false;
             
-            //StartCoroutine(Pickup());
+
             Destroy(gameObject);
         }
     }
