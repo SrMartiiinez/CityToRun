@@ -21,7 +21,8 @@ public class KnockMidTrigger : MonoBehaviour
 
 
 
-                Destroy(transform.parent.gameObject);
+               // Destroy(transform.parent.gameObject);
+                transform.parent.gameObject.SetActive(false);
             }
             else
             {

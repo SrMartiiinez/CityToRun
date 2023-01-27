@@ -5716,7 +5716,7 @@ PrefabInstance:
       objectReference: {fileID: 1036029813}
     - target: {fileID: 8633757344900320, guid: 10e629c5f68a1e94598ce5140fa97659, type: 3}
       propertyPath: m_VersionIndex
-      value: 5503
+      value: 5566
       objectReference: {fileID: 0}
     - target: {fileID: 1669485245492398270, guid: 10e629c5f68a1e94598ce5140fa97659, type: 3}
       propertyPath: m_Name
@@ -5784,7 +5784,7 @@ PrefabInstance:
       objectReference: {fileID: 1124555844}
     - target: {fileID: 8071778485487902293, guid: 10e629c5f68a1e94598ce5140fa97659, type: 3}
       propertyPath: m_VersionIndex
-      value: 5506
+      value: 5569
       objectReference: {fileID: 0}
     - target: {fileID: 8308725260350715956, guid: 10e629c5f68a1e94598ce5140fa97659, type: 3}
       propertyPath: m_Mesh
@@ -9080,7 +9080,6 @@ GameObject:
   - component: {fileID: 2001467590}
   - component: {fileID: 2001467589}
   - component: {fileID: 2001467591}
-  - component: {fileID: 2001467593}
   - component: {fileID: 2001467594}
   m_Layer: 0
   m_Name: Player
@@ -9190,19 +9189,6 @@ MonoBehaviour:
   magnetIndicador: {fileID: 127610998}
   jetpackIndicador: {fileID: 1317549782}
   powerUpDurationSlider: {fileID: 631871850}
---- !u!114 &2001467593
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2001467587}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b415ce7655916643a6421ca7f3102ba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 100
 --- !u!54 &2001467594
 Rigidbody:
   m_ObjectHideFlags: 0

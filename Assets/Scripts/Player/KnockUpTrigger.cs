@@ -2,6 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+ *  
+ */
+
+
 public class KnockUpTrigger : MonoBehaviour 
 {
 
@@ -20,9 +25,10 @@ public class KnockUpTrigger : MonoBehaviour
 
                 Debug.Log("Kaboom");
 
-                
 
-                Destroy(transform.parent.gameObject);
+
+                // Destroy(transform.parent.gameObject);
+                transform.parent.gameObject.SetActive(false);
             }
             else
             {

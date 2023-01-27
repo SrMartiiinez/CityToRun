@@ -2,25 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Maneja el efecto de la sacudida de la camara.
+/// </summary>
+
+
 public class ShakeCamera : MonoBehaviour
 {
 
     private bool started = false;
-    public AnimationCurve curve;
+    public AnimationCurve curve; //Ajuste de la curva de la intensidad de duracion tra mover la cámara.
     public float duration = 1f;
     public float magnitude = 1f;
 
 
 
-    // Update is called once per frame
-    //void Update()
-    //{
-    //    if (start)
-    //    {
-    //        start = false;
-    //        StartCoroutine(Shaking());
-    //    }
-    //}
 
     public void Choque()
     {
@@ -28,7 +24,7 @@ public class ShakeCamera : MonoBehaviour
 
         if (!started)
         {
-            //StartCoroutine(Shaking());
+            
             StartCoroutine(PlayCameraShakeAnimation());
             Debug.Log("Movimiento");
         }
@@ -42,7 +38,7 @@ public class ShakeCamera : MonoBehaviour
         Vector3 startPosition = transform.position;
         float elapsedTime = 0f;
 
-        while(elapsedTime < duration)
+        while(elapsedTime < duration) // Se ajusta la fuerza del tiempo.
         {
             elapsedTime += Time.deltaTime;
             float strength = curve.Evaluate(elapsedTime / duration);
@@ -55,7 +51,7 @@ public class ShakeCamera : MonoBehaviour
     }
 
 
-    public IEnumerator PlayCameraShakeAnimation()
+    public IEnumerator PlayCameraShakeAnimation() // Se realiza la magnitud del moiviemto de cámara de forma aleatoria.
     {
         Vector3 originalPosition = transform.localPosition;
         float elapsedTime = 0f;
