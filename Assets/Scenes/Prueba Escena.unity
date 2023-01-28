@@ -6241,7 +6241,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!135 &1434818701
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -9178,7 +9178,7 @@ MonoBehaviour:
   coinsTextPause: {fileID: 1589588852}
   coinsTextDeath: {fileID: 231907846}
   knockUpTime: 5
-  multiplier: 2
+  jumpMultiplier: 2
   gameOver: 0
   gameOverCooldown: 2
   shakeCamera: {fileID: 963194230}
