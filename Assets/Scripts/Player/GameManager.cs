@@ -16,6 +16,8 @@ public class GameManager : MonoBehaviour
     public Text uiDistancePause;
     public Text uiDistanceDeath;
 
+    [HideInInspector] public static Transform coinsRotation;
+
 
     // Start is called before the first frame update
     void Start()
@@ -31,5 +33,8 @@ public class GameManager : MonoBehaviour
         uiDistance.text = distance.ToString() + " m";
         uiDistancePause.text = distance.ToString() + " m";
         uiDistanceDeath.text = distance.ToString() + " m";
+
+        transform.Rotate(200 * Time.deltaTime, 0, 0);
+        coinsRotation = transform;
     }
 }

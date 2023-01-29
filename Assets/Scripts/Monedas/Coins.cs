@@ -12,8 +12,9 @@ public class Coins : MonoBehaviour
 {
     public EventSO pickup;
     private bool collectedCoin;
+    private Vector3 defaultPos;
 
-    void OnEnable()
+    void OnEnable() 
     {
         collectedCoin = false;
     }
@@ -21,18 +22,19 @@ public class Coins : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Rotate(200 * Time.deltaTime, 0, 0);
+        //transform.Rotate(200 * Time.deltaTime, 0, 0);
+        transform.rotation = GameManager.coinsRotation.rotation;
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player" && !collectedCoin)
+        if(other.tag == "Player" && !collectedCoin)
         {
             collectedCoin = true;
             Character.numberOfCoins += 1;
-
+            
             pickup.Ocurred(gameObject);
-
+            
             transform.parent.gameObject.SetActive(false);
         }
     }

@@ -30,10 +30,12 @@ public class PowerUpSpawnPoint : MonoBehaviour {
     //Este trigger está colocado un tile por delante del prefab actual. Al llegar a él, se instancia un powerUp en este prefab, el cual está a un tile del jugador.
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        // Comprobamos que se han asignado los puntos de spawn y que el jugador ha entrado en el trigger.
+        if (other.CompareTag("Player") && 
+            (tileSpawnPoints != null && tileSpawnPoints.Length != 0 && tileSpawnPoints[0] != null))
         {
             spawnManager.SpawnPowerUpV2(tileSpawnPoints);
-
+            //Debug.Log($"SpawnPoint {tileSpawnPoints[0].name} - {tileSpawnPoints[0].position}");
         }
     }
 }

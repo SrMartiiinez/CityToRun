@@ -12,6 +12,11 @@ public class AtrationCoins : MonoBehaviour
     public float attratorSpeed;
     public GameObject pickupEffect;
     [SerializeField] private Collider attractionCollider;
+    private Vector3 defaultLocalPos;
+
+    void Start() {
+        defaultLocalPos = transform.localPosition;
+    }
 
     private void Update()
     {
@@ -37,4 +42,7 @@ public class AtrationCoins : MonoBehaviour
 
     }
 
+    private void OnDisable() {
+        transform.localPosition = defaultLocalPos;
+    }
 }

@@ -24,6 +24,7 @@ public class PowerUpSpawnManager : MonoBehaviour {
 
     [HideInInspector] public GameObject[] spawnPoints;
     private GameObject go; //Guarda el último pwerUps instanciado.
+    private List<GameObject> powerUpsSpawned = new List<GameObject>(); //Guarda todos los powerUps instanciados.
 
     private void Awake()
     {
@@ -45,6 +46,8 @@ public class PowerUpSpawnManager : MonoBehaviour {
             int index = Random.Range(0, spawnPowerUps.Count);
 
             go = Instantiate(spawnPowerUps[index], tileSpawnPoints[Random.Range(0, tileSpawnPoints.Length)]);
+            //go.transform.parent = null;
+            powerUpsSpawned.Add(go);
 
             CheckSpawn(index);
         }
@@ -79,6 +82,11 @@ public class PowerUpSpawnManager : MonoBehaviour {
         {
             
             canSpawn = true;
+        }
+
+        if (powerUpsSpawned.Count > 1) {
+            Destroy(powerUpsSpawned[0]); //Elimina el primer powerUp de la lista para que no se acumulen.
+            powerUpsSpawned.RemoveAt(0);
         }
     }
 }

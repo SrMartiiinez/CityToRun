@@ -33,6 +33,7 @@ public class Character : MonoBehaviour
     private float ColHeight; 
     private float ColCenterY;
     public float CollCenterYOnRoll;
+    private bool ColRestored = true;
 
 
     public static int numberOfCoins;
@@ -161,7 +162,7 @@ public class Character : MonoBehaviour
             }
             GridViewController.Instance.currentSwipe = GridViewController.DraggedDirection.None;
         }
-       
+
         //Movimiento del perasonaje.
         Vector3 moveVector = new Vector3(x - transform.position.x, y * Time.deltaTime, FwdSpeed * Time.deltaTime);
         x = Mathf.Lerp(x, NewXPos, Time.deltaTime * SpeedDodge);
@@ -206,6 +207,7 @@ public class Character : MonoBehaviour
                 //Debug.Log("EmpiezaRoll");
                 InRoll = true;
                 InJump = false;
+                ColRestored = false;
 
             }
             GridViewController.Instance.currentSwipe = GridViewController.DraggedDirection.None;
@@ -384,8 +386,9 @@ public class Character : MonoBehaviour
         FwdSpeed = 0;
         Boost = true;
         InJump = true;
-        y = 10;
+        y = 9;
         jetpackIndicador.SetActive(true);
+        
         yield return new WaitForSeconds(0.5f);
         y = 0;
         FwdSpeed = 30;
@@ -508,11 +511,23 @@ public class Character : MonoBehaviour
         JumpPower /= jumpMultiplier;
     }
 
+    // Reinicia el collider del character controller a como estaba por defecto. Se llama incluso si la animación se cancela.
+    void OnAnimatorMove() 
+    {
+        if (!m_Animator.GetCurrentAnimatorStateInfo(0).IsName("Roll") && !m_Animator.GetNextAnimatorStateInfo(0).IsName("Roll") 
+            && !ColRestored) 
+        {
+            AfterRoll();
+        }
+    }
+
     //Reinicia el collider del character controller a como estaba por defecto. Se llama al final de la animación Rolling.
     public void AfterRoll()
     {
         m_char.center = new Vector3(0, ColCenterY, 0);
         m_char.height = ColHeight;
+        ColRestored = true;
+        Debug.Log("Collider Restored");
     }
     
 }
