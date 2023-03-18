@@ -16,6 +16,8 @@ public class GameOverManager : MonoBehaviour {
 
     public GameObject gameOverUI; 
     public GameObject hudGO; //Interfaz del juego
+    public Character player;
+    public float invulnerabilityTimeAfterTryAgain = 1f;
 
     private void Awake() {
         if (instance == null) {
@@ -25,7 +27,8 @@ public class GameOverManager : MonoBehaviour {
 
     private void Start() {
         gameOverUI.SetActive(false);
-       
+        player = FindObjectOfType<Character>();
+
     }
 
     public void GameOver() {
@@ -35,6 +38,11 @@ public class GameOverManager : MonoBehaviour {
     public void DisableUI()
     {
         hudGO.SetActive(false);
+    }
+
+    public void TryAgain() {
+        gameOverUI.SetActive(false);
+        player.ResetPlayer(invulnerabilityTimeAfterTryAgain);
     }
 
     public void Restart()

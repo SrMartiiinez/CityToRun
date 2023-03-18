@@ -367,7 +367,7 @@ public class Character : MonoBehaviour
         }
         
 
-        PlayerPrefs.SetFloat("MusicaFondo", ((float)ExampleClass.instance.time));
+        //PlayerPrefs.SetFloat("MusicaFondo", ((float)ExampleClass.instance.time));
     }
 
 
@@ -528,6 +528,15 @@ public class Character : MonoBehaviour
         m_char.height = ColHeight;
         ColRestored = true;
         Debug.Log("Collider Restored");
+    }
+
+    public void ResetPlayer(float time) {
+        gameOver = false;
+        m_char.enabled = false;
+        transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z - 1f);
+        m_char.enabled = true;
+        m_Animator.SetTrigger("Reset");
+        Invencibilidad(time);
     }
     
 }
