@@ -9,6 +9,8 @@ using System.Collections;
 // by
 //   nextEventTime += clips[flip].length;
 
+// testing
+
 [AddComponentMenu("Scripts/ESI/Sonido/AudioData")]
 
 [RequireComponent(typeof(AudioSource))]
