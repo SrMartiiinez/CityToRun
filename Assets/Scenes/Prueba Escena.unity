@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 0.488
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.087978356, g: 0.11014832, b: 0.14977816, a: 0.488}
+  m_IndirectSpecularColor: {r: 0.08797849, g: 0.11014849, b: 0.14977835, a: 0.488}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -10037,6 +10037,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2112289171131506630, guid: 1aee364705e8fc644aec820f3b77be9b, type: 3}
       propertyPath: hudGO
+      value: 
+      objectReference: {fileID: 1996825254}
+    - target: {fileID: 2112289171131506630, guid: 1aee364705e8fc644aec820f3b77be9b, type: 3}
+      propertyPath: hudGame
       value: 
       objectReference: {fileID: 1996825254}
     - target: {fileID: 2112289171131506630, guid: 1aee364705e8fc644aec820f3b77be9b, type: 3}
