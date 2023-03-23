@@ -82,7 +82,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a0d56a157eb33445a8d8b83b9c9293f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  duration: 5
+  duration: 4.3
   coinsSpawn: {fileID: 5294513519271834754}
   coinsPrefabs:
   - {fileID: 1669485245492398270, guid: 623bdc399ba442f4495040f42a6ca779, type: 3}
