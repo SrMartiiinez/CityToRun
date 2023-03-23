@@ -178,7 +178,7 @@ Material:
     - _OcclusionStrength: 1
     - _OutlineEnabled: 1
     - _OutlineMode: 0
-    - _OutlineWidth: 3.17
+    - _OutlineWidth: 10.86
     - _OverrideShadowColor: 0
     - _Parallax: 0.005
     - _QueueOffset: 0
@@ -210,13 +210,13 @@ Material:
     - _ZWrite: 1
     - _brushScale: 80
     m_Colors:
-    - _BaseColor: {r: 0.8207547, g: 0.39101994, b: 0.5749585, a: 1}
+    - _BaseColor: {r: 1, g: 0.10082774, b: 0.042452812, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _FaceFrontDirection: {r: 0, g: 0, b: 1, a: 0}
     - _FaceRightDirection: {r: 1, g: 0, b: 0, a: 0}
     - _HairSpecColor: {r: 0, g: 0, b: 0, a: 1}
-    - _HalfToneColor: {r: 0.6132076, g: 0, b: 0.09821253, a: 0.6745098}
+    - _HalfToneColor: {r: 1, g: 0.95240456, b: 0, a: 0.95686275}
     - _HatchingColor: {r: 0, g: 0, b: 0, a: 1}
     - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
     - _OutlineDistancFade: {r: -25, g: 50, b: 0, a: 0}
