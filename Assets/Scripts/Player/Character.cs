@@ -407,7 +407,7 @@ public class Character : MonoBehaviour
         }
         powerUpDurationSlider.value = 1;
         powerUpDurationSlider.gameObject.SetActive(false);
-        FwdSpeed = 7;
+        FwdSpeed = 9;
         Boost = false;
         InJump = false;
         jetpackIndicador.SetActive(false);
