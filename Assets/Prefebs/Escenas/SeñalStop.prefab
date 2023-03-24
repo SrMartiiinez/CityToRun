@@ -178,6 +178,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: "Se\xF1alStop"
       objectReference: {fileID: 0}
+    - target: {fileID: 3765108852280629433, guid: b28bdcf6ac95ac946b3735cae27af661, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 486d3b1adb2575d4193fdcad0bd4f2c2, type: 2}
+    - target: {fileID: 3765108852280629433, guid: b28bdcf6ac95ac946b3735cae27af661, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 486d3b1adb2575d4193fdcad0bd4f2c2, type: 2}
+    - target: {fileID: 3765108852280629433, guid: b28bdcf6ac95ac946b3735cae27af661, type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: 04f728d0eec79fc4a8eb3e44c0e808ab, type: 2}
+    - target: {fileID: 3765108852280629433, guid: b28bdcf6ac95ac946b3735cae27af661, type: 3}
+      propertyPath: m_Materials.Array.data[3]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2b3b0915109eaaf43af8a7c6df85d4d4, type: 2}
+    - target: {fileID: 4431670454091400558, guid: b28bdcf6ac95ac946b3735cae27af661, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 005a5754e5702ee49ada351cce78e78f, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b28bdcf6ac95ac946b3735cae27af661, type: 3}
 --- !u!4 &8874505864532133192 stripped

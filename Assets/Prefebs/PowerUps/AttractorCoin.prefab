@@ -459,6 +459,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: adf1f2af663597e43a7998bedf7011f6, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 91a56785274a8704e997c41cecac26cc, type: 2}
+    - target: {fileID: -7511558181221131132, guid: adf1f2af663597e43a7998bedf7011f6, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: eb4eecdb9f9cac949b54952cea15e143, type: 2}
+    - target: {fileID: -7511558181221131132, guid: adf1f2af663597e43a7998bedf7011f6, type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: b321a2e369935e845a71b1e47776decc, type: 2}
+    - target: {fileID: -7511558181221131132, guid: adf1f2af663597e43a7998bedf7011f6, type: 3}
+      propertyPath: m_Materials.Array.data[4]
+      value: 
+      objectReference: {fileID: 2100000, guid: ea2d2b02366eb6c45bfae02f3cebd93e, type: 2}
     - target: {fileID: 919132149155446097, guid: adf1f2af663597e43a7998bedf7011f6, type: 3}
       propertyPath: m_Name
       value: Moneda

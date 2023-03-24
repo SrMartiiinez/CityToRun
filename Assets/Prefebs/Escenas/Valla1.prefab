@@ -360,10 +360,50 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -879077019449755227, guid: 45dbe31e13fef814e98a98bd6e8a141e, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 04f728d0eec79fc4a8eb3e44c0e808ab, type: 2}
+    - target: {fileID: -879077019449755227, guid: 45dbe31e13fef814e98a98bd6e8a141e, type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: 43736a8b57ecfd440a8adc66395b1d87, type: 2}
+    - target: {fileID: -636464194646164556, guid: 45dbe31e13fef814e98a98bd6e8a141e, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 04f728d0eec79fc4a8eb3e44c0e808ab, type: 2}
     - target: {fileID: 919132149155446097, guid: 45dbe31e13fef814e98a98bd6e8a141e, type: 3}
       propertyPath: m_Name
       value: Valla Just Up (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 3816654056258493912, guid: 45dbe31e13fef814e98a98bd6e8a141e, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: af6922d04344ca04cad2b5f35be304c5, type: 2}
+    - target: {fileID: 5117269737276333718, guid: 45dbe31e13fef814e98a98bd6e8a141e, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2b3b0915109eaaf43af8a7c6df85d4d4, type: 2}
+    - target: {fileID: 5117269737276333718, guid: 45dbe31e13fef814e98a98bd6e8a141e, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 486d3b1adb2575d4193fdcad0bd4f2c2, type: 2}
+    - target: {fileID: 7494326664508013997, guid: 45dbe31e13fef814e98a98bd6e8a141e, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2b3b0915109eaaf43af8a7c6df85d4d4, type: 2}
+    - target: {fileID: 7494326664508013997, guid: 45dbe31e13fef814e98a98bd6e8a141e, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 486d3b1adb2575d4193fdcad0bd4f2c2, type: 2}
+    - target: {fileID: 8535133971147982272, guid: 45dbe31e13fef814e98a98bd6e8a141e, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 04f728d0eec79fc4a8eb3e44c0e808ab, type: 2}
+    - target: {fileID: 8535133971147982272, guid: 45dbe31e13fef814e98a98bd6e8a141e, type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: 43736a8b57ecfd440a8adc66395b1d87, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 45dbe31e13fef814e98a98bd6e8a141e, type: 3}
 --- !u!4 &1583879234113515049 stripped

@@ -98,10 +98,34 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -1592289475483123607, guid: 9a84a3f05ab07d6499a3506a1da41545, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: af6922d04344ca04cad2b5f35be304c5, type: 2}
+    - target: {fileID: -1041279737980340588, guid: 9a84a3f05ab07d6499a3506a1da41545, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 04f728d0eec79fc4a8eb3e44c0e808ab, type: 2}
+    - target: {fileID: -1041279737980340588, guid: 9a84a3f05ab07d6499a3506a1da41545, type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: 43736a8b57ecfd440a8adc66395b1d87, type: 2}
     - target: {fileID: 919132149155446097, guid: 9a84a3f05ab07d6499a3506a1da41545, type: 3}
       propertyPath: m_Name
       value: Vaya Up y Down (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 2462319978785181516, guid: 9a84a3f05ab07d6499a3506a1da41545, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 04f728d0eec79fc4a8eb3e44c0e808ab, type: 2}
+    - target: {fileID: 8835409689826365435, guid: 9a84a3f05ab07d6499a3506a1da41545, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2b3b0915109eaaf43af8a7c6df85d4d4, type: 2}
+    - target: {fileID: 8835409689826365435, guid: 9a84a3f05ab07d6499a3506a1da41545, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 486d3b1adb2575d4193fdcad0bd4f2c2, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a84a3f05ab07d6499a3506a1da41545, type: 3}
 --- !u!4 &4142018073010836480 stripped

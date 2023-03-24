@@ -574,10 +574,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 75241364967847454, guid: bcc2afa199e62894ea4fa483fc39fe5b, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6781a7ffa76437a47b4966b2acebbbdd, type: 2}
     - target: {fileID: 919132149155446097, guid: bcc2afa199e62894ea4fa483fc39fe5b, type: 3}
       propertyPath: m_Name
       value: Conteiner Rampa
       objectReference: {fileID: 0}
+    - target: {fileID: 5409941592690506366, guid: bcc2afa199e62894ea4fa483fc39fe5b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5ac0dacfb8cc54b4f84fac83915a7d48, type: 2}
+    - target: {fileID: 5500436077478298816, guid: bcc2afa199e62894ea4fa483fc39fe5b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 049287bc2d116e949ae049d0954701c8, type: 2}
+    - target: {fileID: 8992797290524839866, guid: bcc2afa199e62894ea4fa483fc39fe5b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5ac0dacfb8cc54b4f84fac83915a7d48, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bcc2afa199e62894ea4fa483fc39fe5b, type: 3}
 --- !u!4 &1379439228791104183 stripped

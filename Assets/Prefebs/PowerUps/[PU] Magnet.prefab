@@ -281,6 +281,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -112.365
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 8c4bed24761bb0547bb14e1ee146f72c, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 956450943000ece4d81a016e28df5d85, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 8c4bed24761bb0547bb14e1ee146f72c, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: f0e4616996174344c8c07611c71c2812, type: 2}
     - target: {fileID: 919132149155446097, guid: 8c4bed24761bb0547bb14e1ee146f72c, type: 3}
       propertyPath: m_Name
       value: Magnet

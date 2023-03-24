@@ -19,7 +19,7 @@ public class Character : MonoBehaviour
     public bool SwipeLeft, SwipeRight, SwipeUp, SwipeDown; // Movimiento de los toques de la pantalla.
     public float XValue;
     private CharacterController m_char;
-    private Animator m_Animator;
+    public Animator m_Animator;
     public float x;
     public float y;
     public float SpeedDodge;
