@@ -9109,7 +9109,7 @@ MonoBehaviour:
   JumpPower: 7.2
   InJump: 0
   InRoll: 0
-  FwdSpeed: 9
+  FwdSpeed: 7
   CollCenterYOnRoll: -0.56
   coinsText: {fileID: 1974707197}
   coinsTextPause: {fileID: 1589588852}
