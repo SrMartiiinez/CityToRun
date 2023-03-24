@@ -9059,7 +9059,7 @@ CharacterController:
   serializedVersion: 2
   m_Height: 2
   m_Radius: 0.5
-  m_SlopeLimit: 45
+  m_SlopeLimit: 42.32
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
@@ -9105,11 +9105,11 @@ MonoBehaviour:
   m_Animator: {fileID: 0}
   x: 0
   y: 0
-  SpeedDodge: 10
+  SpeedDodge: 13
   JumpPower: 7.2
   InJump: 0
   InRoll: 0
-  FwdSpeed: 7
+  FwdSpeed: 13
   CollCenterYOnRoll: -0.56
   coinsText: {fileID: 1974707197}
   coinsTextPause: {fileID: 1589588852}
