@@ -41,6 +41,7 @@ public class SwitchCamera : MonoBehaviour
         {
 
             mainCamera.enabled = true;
+            SimpleSkinUpdater.UpdateSkins();
             secondCamera.enabled = false;
             thirdCamera.enabled = false;
             
