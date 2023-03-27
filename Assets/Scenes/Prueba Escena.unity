@@ -6991,7 +6991,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   uiDistance: {fileID: 1093819235}
   uiDistancePause: {fileID: 1874312399}
-  uiDistanceDeath: {fileID: 0}
+  uiDistanceDeath: {fileID: 1895807071}
 --- !u!4 &1756196983
 Transform:
   m_ObjectHideFlags: 0
@@ -7828,6 +7828,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7810325065797163983, guid: f10737bdaeba6dc4198bf5d6db787a6d, type: 3}
   m_PrefabInstance: {fileID: 1879905116}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1895807071 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4569241813350483984, guid: 46b5b4f2ce77a4a4694e0c78f9c7cfd5, type: 3}
+  m_PrefabInstance: {fileID: 7566365204313897802}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1924573522
 GameObject:
   m_ObjectHideFlags: 0
