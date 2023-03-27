@@ -8728,7 +8728,7 @@ MonoBehaviour:
   buyText: Buy
   selectionText: Select
   mainMenuInfo: {fileID: 1087468192}
-  playerMoney: 15
+  playerMoney: 0
 --- !u!4 &2047473863 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4333627001259202, guid: 4752f864e3118e64482c22f7a8d21b01, type: 3}
