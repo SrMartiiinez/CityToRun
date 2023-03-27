@@ -12,17 +12,33 @@ public class SkinSelection : MonoBehaviour {
     [SerializeField] private List<Skin> skins; // Lista de skins disponibles
     [SerializeField] private Button confirmButton; // Botón para confirmar la selección de skin
     [SerializeField] private Text confirmButtonText; // Texto del botón de confirmación
+
+    [SerializeField] private string buyText = "Comprar";
+    [SerializeField] private string selectionText = "Seleccionar";
+
+    [SerializeField] private MainMenuInfo mainMenuInfo;
+
     [SerializeField] private int playerMoney; // Dinero del jugador
     private int selectedSkinIndex = 0; // Índice de la skin seleccionada
 
+    private bool isStarted;
+
     void Start() {
+        //PlayerPrefs.DeleteAll();
+        //Debug.Log("Playerpref borrado.");
         // Obtener el índice de la última skin seleccionada de PlayerPrefs
         selectedSkinIndex = PlayerPrefs.GetInt("SelectedSkin", 0);
+
+        if(!isStarted)
+            CheckPlayerMoney();
+
+        isStarted = true;
     }
 
     void OnEnable() {
         // Actualizar el dinero del jugador
-        CheckPlayerMoney();
+        if (isStarted)
+            CheckPlayerMoney();
 
         // Mostrar la skin seleccionada cuando el objeto se activa
         ShowSkin(selectedSkinIndex);
@@ -62,7 +78,7 @@ public class SkinSelection : MonoBehaviour {
         // Verificar si la skin ya ha sido comprada
         if (PlayerPrefs.GetInt("Skin" + index) == 1) {
             // Cambiar el texto del botón de confirmación a "Seleccionar"
-            confirmButtonText.text = "Seleccionar";
+            confirmButtonText.text = selectionText;
 
             // Verificar si la skin mostrada es la misma que la última skin seleccionada
             if (index == PlayerPrefs.GetInt("SelectedSkin", 0)) {
@@ -76,7 +92,7 @@ public class SkinSelection : MonoBehaviour {
         }
         else {
             // Cambiar el texto del botón de confirmación a "Comprar"
-            confirmButtonText.text = "Comprar";
+            confirmButtonText.text = buyText;
 
             // Verificar si el jugador tiene suficiente dinero para comprar la skin
             if (playerMoney >= skins[index].cost) {
@@ -102,6 +118,8 @@ public class SkinSelection : MonoBehaviour {
         else {
             // Reducir el dinero del jugador en el costo de la skin seleccionada
             playerMoney -= skins[selectedSkinIndex].cost;
+            PlayerPrefs.SetInt("numberOfTotalCoins", playerMoney);
+            mainMenuInfo.UpdateUIText();
 
             // Guardar la compra de la skin en PlayerPrefs
             PlayerPrefs.SetInt("Skin" + selectedSkinIndex, 1);
@@ -113,6 +131,7 @@ public class SkinSelection : MonoBehaviour {
 
     private void CheckPlayerMoney() {
         // Obtener el dinero del jugador de PlayerPrefs
-        //playerMoney = PlayerPrefs.GetInt("PlayerMoney", 0);
+        playerMoney = PlayerPrefs.GetInt("numberOfTotalCoins", 0);
+        mainMenuInfo.UpdateUIText();
     }
 }

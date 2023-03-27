@@ -8610,6 +8610,9 @@ MonoBehaviour:
     cost: 20
   confirmButton: {fileID: 684498206}
   confirmButtonText: {fileID: 1698742085}
+  buyText: Buy
+  selectionText: Select
+  mainMenuInfo: {fileID: 1087468192}
   playerMoney: 15
 --- !u!4 &2047473863 stripped
 Transform:

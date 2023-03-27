@@ -21,6 +21,6 @@ public class SimpleSkinUpdater : MonoBehaviour {
         }
 
         // Mostrar la skin guardada en PlayerPrefs
-        skinsParent.transform.GetChild(PlayerPrefs.GetInt("SelectedSkin", 4)).gameObject.SetActive(true);
+        skinsParent.transform.GetChild(PlayerPrefs.GetInt("SelectedSkin", 3)).gameObject.SetActive(true);
     }
 }

@@ -16,6 +16,12 @@ public class MainMenuInfo : MonoBehaviour
     private int coinsAmount = 0;
     void Start()
     {
+        UpdateUIText();
+
+    }
+
+    public void UpdateUIText()
+    {
         if (PlayerPrefs.HasKey("numberOfTotalCoins"))
         {
             coinsAmount = PlayerPrefs.GetInt("numberOfTotalCoins");
@@ -29,8 +35,5 @@ public class MainMenuInfo : MonoBehaviour
             //Debug.Log(coinsAmount);
             coins2.text = coinsAmount.ToString();
         }
-
     }
-
-
 }
