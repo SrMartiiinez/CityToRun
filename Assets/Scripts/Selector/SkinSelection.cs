@@ -46,7 +46,7 @@ public class SkinSelection : MonoBehaviour {
 
     void OnDisable() {
         // Ocultar la skin seleccionada cuando el objeto se desactiva
-        skins[selectedSkinIndex].gameObject.SetActive(false);
+        //skins[selectedSkinIndex].gameObject.SetActive(false);
     }
 
     public void SelectNextSkin() {
@@ -65,7 +65,7 @@ public class SkinSelection : MonoBehaviour {
         skins[selectedSkinIndex].gameObject.SetActive(false);
 
         // Seleccionar la skin anterior en la lista
-        selectedSkinIndex = (selectedSkinIndex - 1 + skins.Count) % skins.Count;
+        selectedSkinIndex = (selectedSkinIndex - 1 /* + skins.Count*/) % skins.Count;
 
         // Mostrar la nueva skin seleccionada
         ShowSkin(selectedSkinIndex);
@@ -74,6 +74,7 @@ public class SkinSelection : MonoBehaviour {
     private void ShowSkin(int index) {
         // Mostrar la skin en el índice especificado
         skins[index].gameObject.SetActive(true);
+        Debug.Log("index: " + index);
 
         // Verificar si la skin ya ha sido comprada
         if (PlayerPrefs.GetInt("Skin" + index) == 1) {

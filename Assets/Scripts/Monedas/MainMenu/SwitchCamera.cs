@@ -22,6 +22,8 @@ public class SwitchCamera : MonoBehaviour
     public GameObject secondMenu;
     public GameObject thirdMenu;
 
+    [SerializeField] private Animator playerAnimator;
+
     void Start()
     {
         mainCamera.enabled = true;
@@ -32,6 +34,7 @@ public class SwitchCamera : MonoBehaviour
 
         thirdCamera.enabled = false;
         thirdMenu.SetActive(false);
+        SetDefaultSkin();
     }
 
     // Se usa en eun botón que indica el nombre de la cámara a la que cambiará.
@@ -39,16 +42,16 @@ public class SwitchCamera : MonoBehaviour
     {
         if (cameraName.Equals(mainCameraName))
         {
-
+            playerAnimator.SetBool("SelectSkin", false);
             mainCamera.enabled = true;
-            SimpleSkinUpdater.UpdateSkins();
+            //SimpleSkinUpdater.UpdateSkins();
             secondCamera.enabled = false;
             thirdCamera.enabled = false;
-            
         }
 
         if (cameraName.Equals(secondCameraName))
         {
+            playerAnimator.SetBool("SelectSkin", true);
             mainCamera.enabled = false;
             secondCamera.enabled = true;
             thirdCamera.enabled = false;
@@ -56,6 +59,7 @@ public class SwitchCamera : MonoBehaviour
 
         if (cameraName.Equals(thirdCameraName))
         {
+            playerAnimator.SetBool("SelectSkin", false);
             mainCamera.enabled = false;
             secondCamera.enabled = false;
             thirdCamera.enabled = true;
@@ -65,6 +69,15 @@ public class SwitchCamera : MonoBehaviour
         secondMenu.SetActive(secondCamera.enabled);
         thirdMenu.SetActive(thirdCamera.enabled);
 
+    }
+
+    private void SetDefaultSkin()
+    {
+        if (!PlayerPrefs.HasKey("SelectedSkin"))
+        {
+            PlayerPrefs.SetInt("SelectedSkin", 0);
+        }
+        
     }
 
 }
