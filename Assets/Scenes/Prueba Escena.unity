@@ -5456,6 +5456,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1124780264}
   m_CullTransparentMesh: 1
+--- !u!1 &1161385853 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2603809702554711529, guid: 1412695f3f5efe84ba0f97e3437700d2, type: 3}
+  m_PrefabInstance: {fileID: 2946478892428466603}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1173202148
 GameObject:
   m_ObjectHideFlags: 0
@@ -6994,6 +6999,7 @@ MonoBehaviour:
   uiDistance: {fileID: 1093819235}
   uiDistancePause: {fileID: 1874312399}
   uiDistanceDeath: {fileID: 1895807071}
+  skinFather: {fileID: 1161385853}
 --- !u!4 &1756196983
 Transform:
   m_ObjectHideFlags: 0
@@ -8700,7 +8706,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1657791065373840747, guid: 1412695f3f5efe84ba0f97e3437700d2, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1657791065373840747, guid: 1412695f3f5efe84ba0f97e3437700d2, type: 3}
       propertyPath: m_StaticEditorFlags

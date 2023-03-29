@@ -33,6 +33,11 @@ public class GameOverManager : MonoBehaviour {
 
     public void GameOver() {
         gameOverUI.SetActive(true);
+
+        if (PlayerPrefs.GetInt("RecordPersonal", 0) <= GameManager.distance)
+        {
+            PlayerPrefs.SetInt("RecordPersonal", GameManager.distance);
+        }
     }
 
     public void DisableUI()

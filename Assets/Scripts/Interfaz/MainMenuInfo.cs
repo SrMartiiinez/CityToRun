@@ -14,6 +14,10 @@ public class MainMenuInfo : MonoBehaviour
     public Text coins; //Texto que mostrará el numero de monedas en total.
     public Text coins2; //Texto que mostrará el numero de monedas en la última partida.
     private int coinsAmount = 0;
+
+    public Text Distance; //Texto que mostrará el numero de monedas en la última partida.
+    
+
     void Start()
     {
         UpdateUIText();
@@ -34,6 +38,11 @@ public class MainMenuInfo : MonoBehaviour
             coinsAmount = PlayerPrefs.GetInt("numberOfCoins");
             //Debug.Log(coinsAmount);
             coins2.text = coinsAmount.ToString();
+        }
+
+        if (PlayerPrefs.HasKey("RecordPersonal"))
+        {
+            Distance.text = PlayerPrefs.GetInt("RecordPersonal", 0).ToString();
         }
     }
 }

@@ -10,11 +10,15 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+    public static int distance;
+
     private GameObject player;
 
     public Text uiDistance;
     public Text uiDistancePause;
     public Text uiDistanceDeath;
+
+    [SerializeField] private GameObject skinFather;
 
     [HideInInspector] public static Transform coinsRotation;
 
@@ -24,12 +28,14 @@ public class GameManager : MonoBehaviour
     {
 
         player = GameObject.Find("Player");
+        skinFather.transform.GetChild(PlayerPrefs.GetInt("SelectedSkin", 0) + 1).gameObject.SetActive(true);
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        int distance = Mathf.RoundToInt(player.transform.position.z);
+        distance = Mathf.RoundToInt(player.transform.position.z);
         uiDistance.text = distance.ToString() + " m";
         uiDistancePause.text = distance.ToString() + " m";
         uiDistanceDeath.text = distance.ToString() + " m";

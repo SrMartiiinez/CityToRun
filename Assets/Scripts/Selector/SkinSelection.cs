@@ -28,8 +28,11 @@ public class SkinSelection : MonoBehaviour {
         //Debug.Log("Playerpref borrado.");
         // Obtener el índice de la última skin seleccionada de PlayerPrefs
         selectedSkinIndex = PlayerPrefs.GetInt("SelectedSkin", 0);
+        PlayerPrefs.SetInt("Skin" + selectedSkinIndex, 1);  // Autocompramos la primera.
+        confirmButtonText.text = selectionText;
+        confirmButton.interactable = false;
 
-        if(!isStarted)
+        if (!isStarted)
             CheckPlayerMoney();
 
         isStarted = true;
@@ -52,6 +55,7 @@ public class SkinSelection : MonoBehaviour {
     public void SelectNextSkin() {
         // Ocultar la skin actualmente seleccionada
         skins[selectedSkinIndex].gameObject.SetActive(false);
+        Debug.Log("ArraySkin: " + selectedSkinIndex);
 
         // Seleccionar la siguiente skin en la lista
         selectedSkinIndex = (selectedSkinIndex + 1) % skins.Count;
@@ -65,7 +69,7 @@ public class SkinSelection : MonoBehaviour {
         skins[selectedSkinIndex].gameObject.SetActive(false);
 
         // Seleccionar la skin anterior en la lista
-        selectedSkinIndex = (selectedSkinIndex - 1 /* + skins.Count*/) % skins.Count;
+        selectedSkinIndex = (selectedSkinIndex - 1 + skins.Count) % skins.Count;
 
         // Mostrar la nueva skin seleccionada
         ShowSkin(selectedSkinIndex);
@@ -134,5 +138,14 @@ public class SkinSelection : MonoBehaviour {
         // Obtener el dinero del jugador de PlayerPrefs
         playerMoney = PlayerPrefs.GetInt("numberOfTotalCoins", 0);
         mainMenuInfo.UpdateUIText();
+    }
+
+    public void MenuSkins()
+    {
+        foreach (Skin skin in skins)
+            skin.gameObject.SetActive(false);
+
+        skins[PlayerPrefs.GetInt("SelectedSkin", 0)].gameObject.SetActive(true);
+        //Debug.Log("SelectedSkin: " + PlayerPrefs.GetInt("SelectedSkin"));
     }
 }
