@@ -36,15 +36,24 @@ public class SkinSelection : MonoBehaviour {
             CheckPlayerMoney();
 
         isStarted = true;
+        foreach (Skin skin in skins)
+            skin.gameObject.SetActive(false);
+
+        //skins[PlayerPrefs.GetInt("SelectedSkin", 0)].gameObject.SetActive(true);
+        //Debug.Log("SelectedSkin: " + PlayerPrefs.GetInt("SelectedSkin"));
+
     }
 
     void OnEnable() {
         // Actualizar el dinero del jugador
         if (isStarted)
+        {
             CheckPlayerMoney();
+        }
 
         // Mostrar la skin seleccionada cuando el objeto se activa
         ShowSkin(selectedSkinIndex);
+
     }
 
     void OnDisable() {
