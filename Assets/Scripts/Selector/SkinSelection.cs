@@ -55,10 +55,11 @@ public class SkinSelection : MonoBehaviour {
     public void SelectNextSkin() {
         // Ocultar la skin actualmente seleccionada
         skins[selectedSkinIndex].gameObject.SetActive(false);
-        Debug.Log("ArraySkin: " + selectedSkinIndex);
+        Debug.Log("ArraySkinNext: " + selectedSkinIndex);
 
         // Seleccionar la siguiente skin en la lista
         selectedSkinIndex = (selectedSkinIndex + 1) % skins.Count;
+        Debug.Log("Delante");
 
         // Mostrar la nueva skin seleccionada
         ShowSkin(selectedSkinIndex);
@@ -67,9 +68,11 @@ public class SkinSelection : MonoBehaviour {
     public void SelectPreviousSkin() {
         // Ocultar la skin actualmente seleccionada
         skins[selectedSkinIndex].gameObject.SetActive(false);
+        Debug.Log("ArraySkinPrev: " + selectedSkinIndex);
 
         // Seleccionar la skin anterior en la lista
         selectedSkinIndex = (selectedSkinIndex - 1 + skins.Count) % skins.Count;
+        Debug.Log("Patrs");
 
         // Mostrar la nueva skin seleccionada
         ShowSkin(selectedSkinIndex);
@@ -78,7 +81,7 @@ public class SkinSelection : MonoBehaviour {
     private void ShowSkin(int index) {
         // Mostrar la skin en el índice especificado
         skins[index].gameObject.SetActive(true);
-        Debug.Log("index: " + index);
+        //Debug.Log("index: " + index);
 
         // Verificar si la skin ya ha sido comprada
         if (PlayerPrefs.GetInt("Skin" + index) == 1) {

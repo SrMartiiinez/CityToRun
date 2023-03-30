@@ -26,7 +26,7 @@ public class ShakeCamera : MonoBehaviour
         {
             
             StartCoroutine(PlayCameraShakeAnimation());
-            Debug.Log("Movimiento");
+            //Debug.Log("Movimiento");
         }
     }
 

@@ -16,12 +16,18 @@ public class MainMenuInfo : MonoBehaviour
     private int coinsAmount = 0;
 
     public Text Distance; //Texto que mostrará el numero de monedas en la última partida.
-    
+
+    public GameObject skins;
 
     void Start()
     {
         UpdateUIText();
 
+
+        skins.transform.GetChild(1).gameObject.SetActive(false);
+        // Mostrar la skin guardada en PlayerPrefs
+        skins.transform.GetChild(PlayerPrefs.GetInt("SelectedSkin", 0) + 1).gameObject.SetActive(true);
+        Debug.Log("Skin: " + skins.transform.GetChild(PlayerPrefs.GetInt("SelectedSkin", 0) + 1).name);
     }
 
     public void UpdateUIText()

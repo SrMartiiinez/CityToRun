@@ -5017,6 +5017,7 @@ MonoBehaviour:
   coins: {fileID: 50488091}
   coins2: {fileID: 1193056452}
   Distance: {fileID: 1697091299}
+  skins: {fileID: 1862332244}
 --- !u!82 &1087468193
 AudioSource:
   m_ObjectHideFlags: 0
@@ -6499,7 +6500,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -167, y: 694}
+  m_AnchoredPosition: {x: -158, y: 694}
   m_SizeDelta: {x: 1130.5, y: 217.2906}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1413388313
@@ -6535,7 +6536,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Record Distance
+  m_Text: 'Record '
 --- !u!222 &1413388314
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8192,6 +8193,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 682076500}
     m_Modifications:
     - target: {fileID: 1657791065373840747, guid: 1412695f3f5efe84ba0f97e3437700d2, type: 3}
+      propertyPath: m_Name
+      value: skin1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1657791065373840747, guid: 1412695f3f5efe84ba0f97e3437700d2, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
@@ -8490,6 +8495,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1853841323}
   m_CullTransparentMesh: 1
+--- !u!1 &1862332244 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2603809702554711529, guid: 1412695f3f5efe84ba0f97e3437700d2, type: 3}
+  m_PrefabInstance: {fileID: 1796557318}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1903079742 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4497011438508190, guid: 7446a392a730ac14d9cc70d21cf7ace0, type: 3}

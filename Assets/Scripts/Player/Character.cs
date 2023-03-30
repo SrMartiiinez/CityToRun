@@ -527,7 +527,7 @@ public class Character : MonoBehaviour
         m_char.center = new Vector3(0, ColCenterY, 0);
         m_char.height = ColHeight;
         ColRestored = true;
-        Debug.Log("Collider Restored");
+        //Debug.Log("Collider Restored");
     }
 
     public void ResetPlayer(float time) {
