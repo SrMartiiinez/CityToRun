@@ -113,6 +113,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a44f87c190585d4e8e1e4d73146f378, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  poder: {fileID: 7721493667650482790, guid: fcdb5adaf27b444419836ec0f5f5e50e, type: 3}
   duration: 10
 --- !u!95 &3020958825610436025
 Animator:
