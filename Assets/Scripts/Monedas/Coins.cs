@@ -14,6 +14,10 @@ public class Coins : MonoBehaviour
     private bool collectedCoin;
     private Vector3 defaultPos;
 
+
+
+
+
     void OnEnable() 
     {
         collectedCoin = false;
@@ -34,9 +38,11 @@ public class Coins : MonoBehaviour
             Character.numberOfCoins += 1;
             
             pickup.Ocurred(gameObject);
-            
             transform.parent.gameObject.SetActive(false);
+
         }
     }
+
+
 
 }

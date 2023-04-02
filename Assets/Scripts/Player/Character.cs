@@ -56,6 +56,7 @@ public class Character : MonoBehaviour
     public GameObject magnetIndicador;
     public GameObject jetpackIndicador;
 
+    public AudioSource sonidos;
 
 
     public Slider powerUpDurationSlider;
@@ -268,6 +269,12 @@ public class Character : MonoBehaviour
     }
 
     private void OnTriggerEnter(Collider other) {
+
+        if (other.gameObject.tag == "Coin")
+        {
+            sonidos.Play();
+            Debug.Log("sONIDO");
+        }
         // Se necesita el tag "FrontCollider" atachando el objeto con un trigger. 
         if (!PoweUpManager.instance.Invencibility && !gameOver && other.gameObject.tag == "FrontCollider")
         {
@@ -284,6 +291,7 @@ public class Character : MonoBehaviour
 
             other.gameObject.transform.parent.gameObject.SetActive(false);
         }
+
     }
 
     // Mueve el personaje a un lado.
