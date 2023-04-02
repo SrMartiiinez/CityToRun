@@ -57,6 +57,10 @@ public class Character : MonoBehaviour
     public GameObject jetpackIndicador;
 
     public AudioSource sonidos;
+    public AudioSource salto;
+    public AudioSource golpeo;
+    public AudioSource desplazar;
+    public AudioSource roleo;
 
 
     public Slider powerUpDurationSlider;
@@ -111,6 +115,7 @@ public class Character : MonoBehaviour
                 m_Side = SIDE.Left;
                 if (!knocked) 
                 {
+                    desplazar.Play();
                     m_Animator.Play("Left");
                 }
                 else 
@@ -124,6 +129,7 @@ public class Character : MonoBehaviour
                 m_Side = SIDE.Mid;
                 if (!knocked) 
                 {
+                    desplazar.Play();
                     m_Animator.Play("Left");
                 }
                 else 
@@ -141,6 +147,7 @@ public class Character : MonoBehaviour
                 m_Side = SIDE.Right;
                 if (!knocked) 
                 {
+                    desplazar.Play();
                     m_Animator.Play("Right");
                 }
                 else 
@@ -154,6 +161,7 @@ public class Character : MonoBehaviour
                 m_Side = SIDE.Mid;
                 if (!knocked) 
                 {
+                    desplazar.Play();
                     m_Animator.Play("Right");
                 }
                 else 
@@ -192,7 +200,7 @@ public class Character : MonoBehaviour
             }
             if (!m_Animator.GetCurrentAnimatorStateInfo(0).IsTag("Rolling") && SwipeDown)
             {
-
+                roleo.Play();
                 RollCounter = 0.20f;
 
                 //Ajustamos la forma del collider.
@@ -244,7 +252,8 @@ public class Character : MonoBehaviour
                 y = JumpPower;
                 m_Animator.CrossFadeInFixedTime("Jump", 0.05f);
                 InJump = true;
-                
+                salto.Play();
+
             }
             GridViewController.Instance.currentSwipe = GridViewController.DraggedDirection.None;
         }
@@ -353,6 +362,7 @@ public class Character : MonoBehaviour
     {
         knocked = true;
         m_Animator.SetBool("Knocked", true);
+        golpeo.Play();
         yield return new WaitForSeconds(knockUpTime);
         knocked = false;
         m_Animator.SetBool("Knocked", false);
@@ -364,6 +374,7 @@ public class Character : MonoBehaviour
         gameOver = true;
         GameOverManager.instance.DisableUI();
         m_Animator.Play("Death");
+        golpeo.Play();
         yield return new WaitForSeconds(gameOverCooldown);
         GameOverManager.instance.GameOver();
         PlayerPrefs.SetInt("numberOfCoins", numberOfCoins);
