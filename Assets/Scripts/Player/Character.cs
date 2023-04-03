@@ -533,10 +533,14 @@ public class Character : MonoBehaviour
     // Reinicia el collider del character controller a como estaba por defecto. Se llama incluso si la animación se cancela.
     void OnAnimatorMove() 
     {
+        /*if (!m_Animator.GetCurrentAnimatorStateInfo(0).IsName("Roll") && !m_Animator.GetNextAnimatorStateInfo(0).IsName("Roll") 
+            && !ColRestored) */
         if (!m_Animator.GetCurrentAnimatorStateInfo(0).IsName("Roll") && !m_Animator.GetNextAnimatorStateInfo(0).IsName("Roll") 
-            && !ColRestored) 
-        {
+            && !m_Animator.GetCurrentAnimatorStateInfo(0).IsName("Falling") && 
+            !m_Animator.GetNextAnimatorStateInfo(0).IsName("Falling") && !ColRestored) {
+            
             AfterRoll();
+            //Debug.Log("On AnimatorMove");
         }
     }
 
