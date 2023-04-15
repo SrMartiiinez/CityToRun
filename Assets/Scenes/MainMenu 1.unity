@@ -634,6 +634,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4752f864e3118e64482c22f7a8d21b01, type: 3}
+--- !u!1 &107080220 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1562950377647736901, guid: 1412695f3f5efe84ba0f97e3437700d2, type: 3}
+  m_PrefabInstance: {fileID: 1796557318}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &174721547
 GameObject:
   m_ObjectHideFlags: 0
@@ -5562,6 +5567,11 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &1093818418 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8369218637822912159, guid: 1412695f3f5efe84ba0f97e3437700d2, type: 3}
+  m_PrefabInstance: {fileID: 1796557318}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1095100077
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8017,6 +8027,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1597870359}
   m_CullTransparentMesh: 1
+--- !u!1 &1602352525 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9075481935655054190, guid: 1412695f3f5efe84ba0f97e3437700d2, type: 3}
+  m_PrefabInstance: {fileID: 1796557318}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1619618162 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4497011438508190, guid: 7446a392a730ac14d9cc70d21cf7ace0, type: 3}
@@ -8984,6 +8999,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4497011438508190, guid: 7446a392a730ac14d9cc70d21cf7ace0, type: 3}
   m_PrefabInstance: {fileID: 1575004586}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1905395499 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6931225621615565080, guid: 1412695f3f5efe84ba0f97e3437700d2, type: 3}
+  m_PrefabInstance: {fileID: 1796557318}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1913594585
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9377,6 +9397,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finalPosition: {x: 591.5, y: 1020, z: -44.7}
+--- !u!1 &2027995403 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7085703193266878294, guid: 1412695f3f5efe84ba0f97e3437700d2, type: 3}
+  m_PrefabInstance: {fileID: 1796557318}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2040465710
 GameObject:
   m_ObjectHideFlags: 0
@@ -9560,6 +9585,18 @@ MonoBehaviour:
     cost: 20
   - gameObject: {fileID: 1640023623}
     cost: 20
+  - gameObject: {fileID: 1093818418}
+    cost: 20
+  - gameObject: {fileID: 107080220}
+    cost: 20
+  - gameObject: {fileID: 2063156956}
+    cost: 20
+  - gameObject: {fileID: 2027995403}
+    cost: 20
+  - gameObject: {fileID: 1905395499}
+    cost: 20
+  - gameObject: {fileID: 1602352525}
+    cost: 20
   confirmButton: {fileID: 684498206}
   confirmButtonText: {fileID: 1698742085}
   buyText: Buy
@@ -9651,6 +9688,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2052613093}
   m_CullTransparentMesh: 1
+--- !u!1 &2063156956 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3699665901228673373, guid: 1412695f3f5efe84ba0f97e3437700d2, type: 3}
+  m_PrefabInstance: {fileID: 1796557318}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2067271463
 GameObject:
   m_ObjectHideFlags: 0
