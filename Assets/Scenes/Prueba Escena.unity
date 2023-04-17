@@ -3251,6 +3251,10 @@ PrefabInstance:
       value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 8921026847086634982, guid: b25b0a6e620bf6243abba84e71a9ebd0, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8921026847086634982, guid: b25b0a6e620bf6243abba84e71a9ebd0, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -8143,7 +8147,6 @@ MonoBehaviour:
   tilePrefebs:
   - {fileID: 1669485245492398270, guid: 435de1c83c68bfb4db4536c946763ec6, type: 3}
   - {fileID: 1669485245492398270, guid: 141a9b439c99793418be27b9da8e84fd, type: 3}
-  - {fileID: 1669485245492398270, guid: 7490deb88f5fe42439b3410d64898492, type: 3}
   zSpawn: 26
   tileLength: 109.15
   numberOfTiles: 3
@@ -8533,7 +8536,7 @@ RectTransform:
   - {fileID: 64154804}
   - {fileID: 1956584517}
   m_Father: {fileID: 1845373241}
-  m_RootOrder: 18
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
