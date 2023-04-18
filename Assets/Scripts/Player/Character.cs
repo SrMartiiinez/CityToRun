@@ -171,7 +171,7 @@ public class Character : MonoBehaviour
             }
             GridViewController.Instance.currentSwipe = GridViewController.DraggedDirection.None;
         }
-
+        
         //Movimiento del perasonaje.
         Vector3 moveVector = new Vector3(x - transform.position.x, y * Time.deltaTime, FwdSpeed * Time.deltaTime);
         x = Mathf.Lerp(x, NewXPos, Time.deltaTime * SpeedDodge);

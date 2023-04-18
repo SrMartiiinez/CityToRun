@@ -6,7 +6,7 @@ AudioMixerController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Efect
+  m_Name: EfectosSonido
   m_OutputGroup: {fileID: 0}
   m_MasterGroup: {fileID: 24300002}
   m_Snapshots:
@@ -15,10 +15,12 @@ AudioMixerController:
   m_SuspendThreshold: -80
   m_EnableSuspend: 1
   m_UpdateMode: 0
-  m_ExposedParameters: []
+  m_ExposedParameters:
+  - guid: 99368c5ae2ed7d1448a1a7d21c5f0cda
+    name: EfectosSonido
   m_AudioMixerGroupViews:
   - guids:
-    - 6e02e43d5d97c8f419ed47b9b311d6ab
+    - 5b3f8782f5e13564f8d2603cc5de28a4
     name: View
   m_CurrentViewIndex: 0
   m_TargetSnapshot: {fileID: 24500006}
@@ -30,14 +32,14 @@ AudioMixerGroupController:
   m_PrefabAsset: {fileID: 0}
   m_Name: Master
   m_AudioMixer: {fileID: 24100000}
-  m_GroupID: 6e02e43d5d97c8f419ed47b9b311d6ab
+  m_GroupID: 5b3f8782f5e13564f8d2603cc5de28a4
   m_Children: []
-  m_Volume: 4029bd185d6dab54e8f9f2fed6b799dc
-  m_Pitch: db3122982a4854240ab638d86fd8a0cd
+  m_Volume: 99368c5ae2ed7d1448a1a7d21c5f0cda
+  m_Pitch: b77f016c4af7103428cfd5213fdcb089
   m_Send: 00000000000000000000000000000000
   m_Effects:
   - {fileID: 24400004}
-  m_UserColorIndex: 2
+  m_UserColorIndex: 0
   m_Mute: 0
   m_Solo: 0
   m_BypassEffects: 0
@@ -48,9 +50,9 @@ AudioMixerEffectController:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: 
-  m_EffectID: fecda5d631c248b49a9dff7a1da92d7b
+  m_EffectID: 0a4741c2ad94dc240ba703d8408c9881
   m_EffectName: Attenuation
-  m_MixLevel: 9b39cf4ca98012f48b1976e228ce5235
+  m_MixLevel: 7de457dc1e4c6e04bb41652ca4020b41
   m_Parameters: []
   m_SendTarget: {fileID: 0}
   m_EnableWetMix: 0
@@ -63,7 +65,6 @@ AudioMixerSnapshotController:
   m_PrefabAsset: {fileID: 0}
   m_Name: Snapshot
   m_AudioMixer: {fileID: 24100000}
-  m_SnapshotID: 2242c9f4499388a4185163a4793ba8e9
-  m_FloatValues:
-    4029bd185d6dab54e8f9f2fed6b799dc: -22.003613
+  m_SnapshotID: 52f4330ceb80abd428c83d31b2d2c090
+  m_FloatValues: {}
   m_TransitionOverrides: {}
