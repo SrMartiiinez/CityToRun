@@ -28,6 +28,7 @@ public class Character : MonoBehaviour
     public bool InRoll;
     float RollCounter;
     public float FwdSpeed = 7f;
+    public float FwdSpeedMax = 13f;
 
     // Datos iniciales del collider del CharacterController.
     private float ColHeight; 
@@ -91,7 +92,10 @@ public class Character : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (FwdSpeed < FwdSpeedMax)
+        {
+            FwdSpeed += (Time.deltaTime * 0.1f);
+        }
         if (gameOver) 
         {
             GridViewController.Instance.currentSwipe = GridViewController.DraggedDirection.None;
