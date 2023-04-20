@@ -29,6 +29,7 @@ public class Character : MonoBehaviour
     float RollCounter;
     public float FwdSpeed = 7f;
     public float FwdSpeedMax = 13f;
+    public float CrtSpeed;
 
     // Datos iniciales del collider del CharacterController.
     private float ColHeight; 
@@ -406,6 +407,7 @@ public class Character : MonoBehaviour
     //Gestiona la mecánca del powerup del jetpack.
     IEnumerator BoostCorroutine(float duration, GameObject[] objectsToDelete)
     {
+        CrtSpeed = FwdSpeed;
         FwdSpeed = 0;
         Boost = true;
         InJump = true;
@@ -428,6 +430,7 @@ public class Character : MonoBehaviour
             powerUpDurationSlider.value = duration;
             
         }
+        FwdSpeed = CrtSpeed;
         powerUpDurationSlider.value = 1;
         powerUpDurationSlider.gameObject.SetActive(false);
         FwdSpeed = 9;
