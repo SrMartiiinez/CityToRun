@@ -4261,9 +4261,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnPowerUps:
   - {fileID: 2598532483382702056, guid: d37eea64a0a2df744908a83eb4a7c424, type: 3}
-  - {fileID: 1880731417455295554, guid: d8d5f8e324fce2c4388406e785ae656b, type: 3}
-  - {fileID: 1419213114768748945, guid: 6af97fd6df246fe4c970ca6d38df190f, type: 3}
-  - {fileID: 1419213114768748945, guid: 05f5c55277d7e764d9399bbcb1ee580a, type: 3}
+  - {fileID: 2598532483382702056, guid: d37eea64a0a2df744908a83eb4a7c424, type: 3}
+  - {fileID: 2598532483382702056, guid: d37eea64a0a2df744908a83eb4a7c424, type: 3}
+  - {fileID: 2598532483382702056, guid: d37eea64a0a2df744908a83eb4a7c424, type: 3}
   playerPos: {fileID: 2001467588}
   defaultList: []
   spawnDelay: 14
@@ -10010,6 +10010,7 @@ MonoBehaviour:
   InRoll: 0
   FwdSpeed: 7
   FwdSpeedMax: 15
+  CrtSpeed: 0
   CollCenterYOnRoll: -0.56
   coinsText: {fileID: 1974707197}
   coinsTextPause: {fileID: 1589588852}
