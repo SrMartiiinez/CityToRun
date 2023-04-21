@@ -3476,7 +3476,6 @@ MonoBehaviour:
   _androidGameId: 
   _iOSGameId: 
   _testMode: 1
-  _GOM: {fileID: 0}
 --- !u!4 &614678055
 Transform:
   m_ObjectHideFlags: 0

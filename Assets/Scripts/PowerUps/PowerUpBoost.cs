@@ -11,12 +11,20 @@ public class PowerUpBoost : MonoBehaviour
     public float duration = 5f;
     public Transform coinsSpawn;
     public GameObject[] coinsPrefabs; //Las monedas que aparecerán en la zona de arriba tras cojer el item
+    private AudioSource Jetpack;
+    public AudioClip audioClip;
 
+
+    private void Start()
+    {
+        Jetpack = GetComponent<AudioSource>();
+    }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
+            //Jetpack.Play();
             Character player = other.GetComponent<Character>();
             
             GameObject coinsPack = Instantiate(coinsPrefabs[Random.Range(0, coinsPrefabs.Length - 1)], 
@@ -30,5 +38,10 @@ public class PowerUpBoost : MonoBehaviour
         }
     }
 
-   
+    void OnDestroy()
+    {
+        Jetpack.clip = audioClip;
+        Jetpack.Play();
+    }
+
 }

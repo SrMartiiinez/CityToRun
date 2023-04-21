@@ -74,6 +74,7 @@ public class ADSample : MonoBehaviour, IUnityAdsInitializationListener, IUnityAd
     {
         Debug.Log("OnUnityAdsShowStart");
         Time.timeScale = 0;
+        AudioListener.volume = 0;
         Advertisement.Banner.Hide();
     }
 
@@ -91,12 +92,13 @@ public class ADSample : MonoBehaviour, IUnityAdsInitializationListener, IUnityAd
 
             //_GOM.TryAgain();
 
-           // if (_GOM == null)
-             //   return;
+            //if (_GOM == null)
+            //    return;
             Debug.Log("Recompensamos al jugador");
         }
         Time.timeScale = 1;
-      
+        AudioListener.volume = 1;
+
     }
 
 

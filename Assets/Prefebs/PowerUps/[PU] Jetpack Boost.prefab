@@ -89,6 +89,7 @@ MonoBehaviour:
   - {fileID: 1669485245492398270, guid: ccbfa8f0693578c428d3ff2fcf01ee67, type: 3}
   - {fileID: 1669485245492398270, guid: d0e7513227ce11945af40e978d2446f0, type: 3}
   - {fileID: 1669485245492398270, guid: 1f901bb13b51128459bb4e23b36406fd, type: 3}
+  audioClip: {fileID: 8300000, guid: 86e54bff82a669b4184cf5f208c83a19, type: 3}
 --- !u!33 &2598532483382702052
 MeshFilter:
   m_ObjectHideFlags: 0
