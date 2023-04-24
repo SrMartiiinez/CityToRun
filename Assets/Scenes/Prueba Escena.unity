@@ -7775,6 +7775,11 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8984834618178480219, guid: 5d189af0db99f694d873d0b1a89592be, type: 3}
   m_PrefabInstance: {fileID: 1611621730}
   m_PrefabAsset: {fileID: 0}
+--- !u!82 &1612370943 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 1274557792230295408, guid: 30f88ac3fd45fb5498e384a4ea9bafb6, type: 3}
+  m_PrefabInstance: {fileID: 1274557792088891708}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1614181758
 GameObject:
   m_ObjectHideFlags: 0
@@ -9861,6 +9866,7 @@ MonoBehaviour:
   golpeo: {fileID: 243900479}
   desplazar: {fileID: 1026161870}
   roleo: {fileID: 361891169}
+  powerUpSound: {fileID: 1612370943}
   powerUpDurationSlider: {fileID: 631871850}
 --- !u!54 &2001467594
 Rigidbody:

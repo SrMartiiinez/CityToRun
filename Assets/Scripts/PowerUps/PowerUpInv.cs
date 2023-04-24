@@ -17,7 +17,9 @@ public class PowerUpInv : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            other.GetComponent<Character>().Invencibilidad(duration); //Activa el efecto en el jugador.
+            Character player = other.GetComponent<Character>();
+            player.powerUpSound.PlayOneShot(player.powerUpSound.clip);
+            player.Invencibilidad(duration); //Activa el efecto en el jugador.
             Destroy(gameObject);
         }
        

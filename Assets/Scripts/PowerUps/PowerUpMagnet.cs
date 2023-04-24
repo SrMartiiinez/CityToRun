@@ -16,8 +16,10 @@ public class PowerUpMagnet : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            Character player = other.GetComponent<Character>();
+            player.powerUpSound.PlayOneShot(player.powerUpSound.clip);
 
-            other.GetComponent<Character>().Imman(duration); //Activa el efecto en el jugador.
+            player.Imman(duration); //Activa el efecto en el jugador.
             Destroy(gameObject);
         }
     }

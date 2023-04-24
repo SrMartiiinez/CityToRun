@@ -63,6 +63,7 @@ public class Character : MonoBehaviour
     public AudioSource golpeo;
     public AudioSource desplazar;
     public AudioSource roleo;
+    public AudioSource powerUpSound;
 
 
     public Slider powerUpDurationSlider;

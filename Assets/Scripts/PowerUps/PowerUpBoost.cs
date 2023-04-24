@@ -26,6 +26,7 @@ public class PowerUpBoost : MonoBehaviour
         {
             //Jetpack.Play();
             Character player = other.GetComponent<Character>();
+            player.powerUpSound.PlayOneShot(player.powerUpSound.clip);
             
             GameObject coinsPack = Instantiate(coinsPrefabs[Random.Range(0, coinsPrefabs.Length - 1)], 
                 new Vector3(0, coinsSpawn.position.y, coinsSpawn.position.z), Quaternion.identity);

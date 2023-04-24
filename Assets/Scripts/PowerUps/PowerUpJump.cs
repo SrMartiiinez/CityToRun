@@ -17,8 +17,10 @@ public class PowerUpJump : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-
-            other.GetComponent<Character>().Salto(duration); //Activa el efecto en el jugador.
+            Character player = other.GetComponent<Character>();
+            player.powerUpSound.PlayOneShot(player.powerUpSound.clip);
+            
+            player.Salto(duration); //Activa el efecto en el jugador.
             Destroy(gameObject);
         }
     }
