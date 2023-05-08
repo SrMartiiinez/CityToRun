@@ -4261,9 +4261,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnPowerUps:
   - {fileID: 2598532483382702056, guid: d37eea64a0a2df744908a83eb4a7c424, type: 3}
-  - {fileID: 2598532483382702056, guid: d37eea64a0a2df744908a83eb4a7c424, type: 3}
-  - {fileID: 2598532483382702056, guid: d37eea64a0a2df744908a83eb4a7c424, type: 3}
-  - {fileID: 2598532483382702056, guid: d37eea64a0a2df744908a83eb4a7c424, type: 3}
+  - {fileID: 1880731417455295554, guid: d8d5f8e324fce2c4388406e785ae656b, type: 3}
+  - {fileID: 1419213114768748945, guid: 6af97fd6df246fe4c970ca6d38df190f, type: 3}
+  - {fileID: 1419213114768748945, guid: 05f5c55277d7e764d9399bbcb1ee580a, type: 3}
   playerPos: {fileID: 2001467588}
   defaultList: []
   spawnDelay: 14
@@ -5257,7 +5257,7 @@ Light:
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 2
+    m_Type: 0
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -10647,7 +10647,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7566365203889286570, guid: 46b5b4f2ce77a4a4694e0c78f9c7cfd5, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7566365203889286570, guid: 46b5b4f2ce77a4a4694e0c78f9c7cfd5, type: 3}
       propertyPath: m_StaticEditorFlags
