@@ -8054,6 +8054,10 @@ MonoBehaviour:
   tilePrefebs:
   - {fileID: 1669485245492398270, guid: 141a9b439c99793418be27b9da8e84fd, type: 3}
   - {fileID: 1669485245492398270, guid: 37945b1e55aad2441ba6b82b418d5871, type: 3}
+  - {fileID: 1669485245492398270, guid: 2f1df83dba1973f44b9adb1e3bdbb137, type: 3}
+  - {fileID: 1669485245492398270, guid: d85992777ac8a394dbf7ca3518a92c3d, type: 3}
+  - {fileID: 1669485245492398270, guid: c07001f60cfe008428c279d4ebd736f4, type: 3}
+  - {fileID: 1669485245492398270, guid: d61fec3398c56424ab76e9b619c72a5a, type: 3}
   zSpawn: 26
   tileLength: 109.15
   numberOfTiles: 3
