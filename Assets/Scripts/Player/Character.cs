@@ -440,6 +440,7 @@ public class Character : MonoBehaviour
         jetpackIndicador.SetActive(false);
         foreach (GameObject obj in objectsToDelete) {
             Destroy(obj);
+            FwdSpeed = CrtSpeed;
             yield return null; // Espera al siguiente frame para continuar, reduciendo la carga
         }
     } 
