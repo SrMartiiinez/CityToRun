@@ -10634,7 +10634,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _androidGameId: 5251928
   _iOSGameId: 5251929
-  _testMode: 0
+  _testMode: 1
 --- !u!1 &1026161868
 GameObject:
   m_ObjectHideFlags: 0
@@ -15596,7 +15596,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7566365204589055799, guid: 46b5b4f2ce77a4a4694e0c78f9c7cfd5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7566365204589055799, guid: 46b5b4f2ce77a4a4694e0c78f9c7cfd5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7566365204589055799, guid: 46b5b4f2ce77a4a4694e0c78f9c7cfd5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
@@ -15629,6 +15633,14 @@ PrefabInstance:
     - target: {fileID: 7566365204589055799, guid: 46b5b4f2ce77a4a4694e0c78f9c7cfd5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
       value: ADSample, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7566365204589055799, guid: 46b5b4f2ce77a4a4694e0c78f9c7cfd5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7566365204589055799, guid: 46b5b4f2ce77a4a4694e0c78f9c7cfd5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 7566365204589055799, guid: 46b5b4f2ce77a4a4694e0c78f9c7cfd5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
