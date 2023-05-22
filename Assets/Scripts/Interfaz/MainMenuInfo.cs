@@ -43,12 +43,15 @@ public class MainMenuInfo : MonoBehaviour
         {
             coinsAmount = PlayerPrefs.GetInt("numberOfCoins");
             //Debug.Log(coinsAmount);
-            coins2.text = coinsAmount.ToString();
+            //coins2.text = coinsAmount.ToString();
+            coins2.text = BaseDatosManager.LoadCoins().ToString();
         }
 
         if (PlayerPrefs.HasKey("RecordPersonal"))
         {
-            Distance.text = PlayerPrefs.GetInt("RecordPersonal", 0).ToString();
+            //Distance.text = PlayerPrefs.GetInt("RecordPersonal", 0).ToString();
+            Distance.text = BaseDatosManager.LoadDistance().ToString();
+
         }
     }
 }

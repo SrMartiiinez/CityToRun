@@ -37,6 +37,7 @@ public class GameOverManager : MonoBehaviour {
         if (PlayerPrefs.GetInt("RecordPersonal", 0) <= GameManager.distance)
         {
             PlayerPrefs.SetInt("RecordPersonal", GameManager.distance);
+            BaseDatosManager.SaveDistance(GameManager.distance);
         }
     }
 
