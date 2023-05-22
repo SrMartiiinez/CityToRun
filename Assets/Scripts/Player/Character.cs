@@ -389,6 +389,7 @@ public class Character : MonoBehaviour
             numberOfTotalCoins = PlayerPrefs.GetInt("numberOfTotalCoins");
             numberOfTotalCoins += numberOfCoins;
             PlayerPrefs.SetInt("numberOfTotalCoins", numberOfTotalCoins);
+            BaseDatosManager.SaveCoins(numberOfTotalCoins);
         }
         
 
