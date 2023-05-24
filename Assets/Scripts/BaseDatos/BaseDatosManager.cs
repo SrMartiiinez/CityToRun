@@ -107,11 +107,12 @@ public static class BaseDatosManager {
     [MenuItem("Tools/DataBases/Reset Data")]
     public static void ResetDatabase() {
         SaveCoins(0);
+        SaveDistance(0);
         PlayerPrefs.DeleteAll();
     }
 
 
-    //Método para cerrar la DB
+    //MÃ©todo para cerrar la DB
     static void CerrarDB() {
         // Cerrar las conexiones
         dbCommand.Dispose();
