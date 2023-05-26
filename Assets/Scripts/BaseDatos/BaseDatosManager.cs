@@ -101,6 +101,7 @@ public static class BaseDatosManager {
         CerrarDB();
     }
 
+#if UNITY_EDITOR
     /// <summary>
     /// Reset all the data from the tables in the database.
     /// </summary>
@@ -110,6 +111,7 @@ public static class BaseDatosManager {
         SaveDistance(0);
         PlayerPrefs.DeleteAll();
     }
+#endif
 
 
     //Método para cerrar la DB
