@@ -18,13 +18,13 @@ public static class JsonManager {
     }
 #endif
 
-    public static void SaveGame(Player curPlayer, Enemy[] enemies) {
+    public static void SaveGame(Character curPlayer/*, Enemy[] enemies*/) {
         //Generamos un jObject para guardar la información serializada más abajo
         JObject jSaveGame = new JObject();
 
         /// Enemies
 
-        //Combinamos los objetos serializados (es decir los jSonString generados) y lo guardamos en el archivo de guardado
+        /*//Combinamos los objetos serializados (es decir los jSonString generados) y lo guardamos en el archivo de guardado
         for (int i = 0; i < enemies.Length; i++) {
             //Guardamos en una referencia el enemigo actual que estamos leyendo
             Enemy curEnemy = enemies[i];
@@ -32,7 +32,7 @@ public static class JsonManager {
             JObject serializedEnemy = curEnemy.Serialize();
             //En el objecto jSon archivo de guardado, añadimos la información que queremos de los objetos serializados
             jSaveGame.Add(curEnemy.name, serializedEnemy);
-        }
+        }*/
 
         /// Player
 
@@ -52,7 +52,7 @@ public static class JsonManager {
         Debug.Log("Saving to: " + saveFilePath);
     }
 
-    public static void LoadGame(Player curPlayer, Enemy[] enemies) {
+    public static void LoadGame(Character curPlayer/*, Enemy[] enemies*/) {
         //Ruta de donde queremos leer la información
         string saveFilePath = Application.persistentDataPath + "/jsonSavegame.sav";
         //Muestra la ruta del archivo por consola
@@ -67,7 +67,7 @@ public static class JsonManager {
             //Generamos un jObject al que le pasamos la información del jSon
             JObject jSaveGame = JObject.Parse(jsonString);
 
-            /// Enemies
+            /*/// Enemies
 
             for (int i = 0; i < enemies.Length; i++) {
                 //Cargamos en una referencia el enemigo actual que estamos leyendo
@@ -77,7 +77,7 @@ public static class JsonManager {
                 //Llamamos al método que deserializa la información obtenida
                 curEnemy.Deserialize(enemyJsonString);
             }
-
+*/
             /// Player
 
             //Generamos un string para cargar la información sacada del archivo de guardado para esa instancia

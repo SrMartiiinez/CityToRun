@@ -1,8 +1,10 @@
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using static Player;
 
 public enum SIDE { Left, Mid, Right } //Carriles del juego.
 
@@ -68,14 +70,16 @@ public class Character : MonoBehaviour
 
     public Slider powerUpDurationSlider;
 
-    
 
 
+    private void Awake() {
+        m_char = GetComponent<CharacterController>();
+    }
 
     // Start is called before the first frame update
     void Start()
     {
-        m_char = GetComponent<CharacterController>();
+        
         ColHeight = m_char.height;
         ColCenterY = m_char.center.y;
         m_Animator = GetComponent<Animator>();
@@ -571,5 +575,40 @@ public class Character : MonoBehaviour
         m_Animator.SetTrigger("Reset");
         Invencibilidad(time);
     }
-    
+
+    public class CharacterData {
+        //Variables para serializar
+        public Vector3 position;
+
+        //Constructor de la clase
+        public CharacterData(Transform transform) {
+            //Rellenamos las variables con las que le pasamos por parámetro
+            position = transform.position;
+        }
+    }
+
+    //Crearemos un objeto serializable capaz de ser guardado
+    public JObject Serialize() {
+        //Instanciamos la clase anidada pasándole por parámetro las variables que queremos guardar
+        CharacterData data = new CharacterData(transform);
+
+        //Creamos un string que guardará el jSon
+        string jsonString = JsonUtility.ToJson(data);
+        //Creamos un objeto en el jSon
+        JObject retVal = JObject.Parse(jsonString);
+        //Al ser un método de tipo, debe devolver este tipo
+        return retVal;
+    }
+
+    //Tendremos que deserializar la información recibida
+    public void Deserialize(string jsonString) {
+        CharacterData data = new CharacterData(transform);
+        //La información recibida del archivo de guardado sobreescribirá los campos oportunos del jsonString
+        JsonUtility.FromJsonOverwrite(jsonString, data);
+
+        // Actualizamos los datos del enemigo con los datos del archivo de guardado
+        m_char.enabled = false;
+        transform.position = data.position;
+        m_char.enabled = true;
+    }
 }

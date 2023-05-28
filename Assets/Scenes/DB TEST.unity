@@ -4038,7 +4038,7 @@ GameObject:
   - component: {fileID: 194899278}
   - component: {fileID: 194899277}
   m_Layer: 5
-  m_Name: Resume Button (2)
+  m_Name: Save Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4111,9 +4111,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2079631005}
-        m_TargetAssemblyTypeName: PausaGameplay, Assembly-CSharp
-        m_MethodName: Resumen
+      - m_Target: {fileID: 1756196985}
+        m_TargetAssemblyTypeName: ManagerSavingObjects, Assembly-CSharp
+        m_MethodName: Save
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4394,7 +4394,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &260251484
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4407,16 +4407,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a6f94da0a83cd34fa50fc8dd2591506, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnPowerUps:
-  - {fileID: 1419213114768748945, guid: 05f5c55277d7e764d9399bbcb1ee580a, type: 3}
-  - {fileID: 2598532483382702056, guid: d37eea64a0a2df744908a83eb4a7c424, type: 3}
-  - {fileID: 1419213114768748945, guid: 6af97fd6df246fe4c970ca6d38df190f, type: 3}
-  - {fileID: 1880731417455295554, guid: d8d5f8e324fce2c4388406e785ae656b, type: 3}
+  spawnPowerUps: []
   playerPos: {fileID: 2001467588}
   defaultList: []
-  spawnDelay: 14
-  spawnDelayExtra: 5
-  extraDelaySpawnProbability: 70
+  spawnDelay: 9999
+  spawnDelayExtra: 9999
+  extraDelaySpawnProbability: 100
   canSpawn: 1
   spawnPoints: []
 --- !u!4 &260251485
@@ -10429,6 +10425,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Suelo 01 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 1669485245492398270, guid: 141a9b439c99793418be27b9da8e84fd, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1998227766164953313, guid: 141a9b439c99793418be27b9da8e84fd, type: 3}
       propertyPath: m_RootOrder
       value: 13
@@ -10576,6 +10576,10 @@ PrefabInstance:
     - target: {fileID: 1669485245492398270, guid: 141a9b439c99793418be27b9da8e84fd, type: 3}
       propertyPath: m_Name
       value: Suelo 01 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1669485245492398270, guid: 141a9b439c99793418be27b9da8e84fd, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1998227766164953313, guid: 141a9b439c99793418be27b9da8e84fd, type: 3}
       propertyPath: m_RootOrder
@@ -11545,6 +11549,10 @@ PrefabInstance:
     - target: {fileID: 1669485245492398270, guid: 141a9b439c99793418be27b9da8e84fd, type: 3}
       propertyPath: m_Name
       value: Suelo 01 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1669485245492398270, guid: 141a9b439c99793418be27b9da8e84fd, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1998227766164953313, guid: 141a9b439c99793418be27b9da8e84fd, type: 3}
       propertyPath: m_RootOrder
@@ -13457,7 +13465,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1656775794
 Transform:
   m_ObjectHideFlags: 0
@@ -13485,31 +13493,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 819eceb01d3d00d43a80a3793e52c338, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tilePrefebs:
-  - {fileID: 1669485245492398270, guid: 141a9b439c99793418be27b9da8e84fd, type: 3}
-  - {fileID: 1669485245492398270, guid: 37945b1e55aad2441ba6b82b418d5871, type: 3}
-  - {fileID: 1669485245492398270, guid: 2f1df83dba1973f44b9adb1e3bdbb137, type: 3}
-  - {fileID: 1669485245492398270, guid: d85992777ac8a394dbf7ca3518a92c3d, type: 3}
-  - {fileID: 1669485245492398270, guid: c07001f60cfe008428c279d4ebd736f4, type: 3}
-  - {fileID: 1669485245492398270, guid: d61fec3398c56424ab76e9b619c72a5a, type: 3}
+  tilePrefebs: []
   zSpawn: 26
   tileLength: 109.15
-  numberOfTiles: 3
+  numberOfTiles: 0
   playerTransform: {fileID: 2001467588}
-  activeTiles:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  poolTiles:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  activeTiles: []
+  poolTiles: []
 --- !u!114 &1697997583 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3376647589883945433, guid: 73c111fd2353d8e4a9fb89d1342b94d1, type: 3}
@@ -13793,6 +13783,7 @@ GameObject:
   - component: {fileID: 1756196983}
   - component: {fileID: 1756196982}
   - component: {fileID: 1756196984}
+  - component: {fileID: 1756196985}
   m_Layer: 0
   m_Name: Managers
   m_TagString: Untagged
@@ -13859,6 +13850,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1756196985
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1756196981}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f5a5af00b2ef814c9923ee57ba7f8b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  curPlayer: {fileID: 2001467591}
 --- !u!1 &1775758806
 GameObject:
   m_ObjectHideFlags: 0
@@ -14253,6 +14257,10 @@ PrefabInstance:
     - target: {fileID: 1669485245492398270, guid: 141a9b439c99793418be27b9da8e84fd, type: 3}
       propertyPath: m_Name
       value: Suelo 01
+      objectReference: {fileID: 0}
+    - target: {fileID: 1669485245492398270, guid: 141a9b439c99793418be27b9da8e84fd, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1998227766164953313, guid: 141a9b439c99793418be27b9da8e84fd, type: 3}
       propertyPath: m_RootOrder
